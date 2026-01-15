@@ -6,10 +6,36 @@ import GlowingCard from "@/components/ui/GlowingCard";
 
 const capabilities = [
   {
-    id: "web-engineering",
-    title: "Custom Web Engineering",
+    id: "ai-solutions",
+    title: "AI & ML Solutions",
     description:
-      "Bespoke web applications built with modern frameworks. Server-side rendering, edge functions, and optimized data fetching for sub-second experiences.",
+      "Intelligent solutions powered by cutting-edge AI. Machine learning models, NLP, computer vision, and custom AI integrations to automate and enhance your business operations.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    metrics: ["ChatGPT", "LLMs", "Computer Vision"],
+    gradient: "from-violet-500 to-purple-500",
+  },
+  {
+    id: "erp-systems",
+    title: "Enterprise ERP Systems",
+    description:
+      "End-to-end ERP solutions that streamline operations. Inventory management, HR, accounting, CRM, and supply chain - all unified in one powerful platform.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
+    metrics: ["Inventory", "HR & Payroll", "Accounting"],
+    gradient: "from-amber-500 to-orange-500",
+  },
+  {
+    id: "web-engineering",
+    title: "Custom Web Development",
+    description:
+      "Bespoke web applications built with modern frameworks. From landing pages to complex SaaS platforms - engineered for performance and scalability.",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -19,43 +45,43 @@ const capabilities = [
     gradient: "from-blue-500 to-cyan-500",
   },
   {
-    id: "performance",
-    title: "High-Performance Websites",
+    id: "mobile-apps",
+    title: "Mobile App Development",
     description:
-      "Lightning-fast business and agency websites engineered for conversion. Core Web Vitals optimization, lazy loading, and edge caching.",
+      "Native and cross-platform mobile applications. iOS, Android, and React Native apps designed for exceptional user experience and performance.",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
       </svg>
     ),
-    metrics: ["99+ Performance", "< 1s LCP", "SEO Ready"],
+    metrics: ["iOS", "Android", "React Native"],
     gradient: "from-devflow-green to-emerald-400",
   },
   {
-    id: "digital-experiences",
-    title: "Conversion-Focused Experiences",
+    id: "cloud-devops",
+    title: "Cloud & DevOps",
     description:
-      "Strategic digital experiences designed around user behavior. A/B tested interfaces, analytics integration, and measurable growth.",
+      "Robust cloud infrastructure and CI/CD pipelines. AWS, Azure, GCP deployments with automated scaling, monitoring, and zero-downtime deployments.",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
     ),
-    metrics: ["UX Research", "Analytics", "Growth"],
-    gradient: "from-purple-500 to-pink-500",
+    metrics: ["AWS", "Azure", "Docker"],
+    gradient: "from-sky-500 to-blue-500",
   },
   {
-    id: "systems",
-    title: "Scalable Systems Design",
+    id: "it-consulting",
+    title: "IT Consulting & Support",
     description:
-      "Architecture that grows with your business. Microservices, API design, database optimization, and infrastructure as code.",
+      "Strategic technology consulting and 24/7 support. Digital transformation, system audits, security assessments, and ongoing maintenance services.",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
-    metrics: ["Cloud Native", "CI/CD", "Docker"],
-    gradient: "from-orange-500 to-red-500",
+    metrics: ["24/7 Support", "Security", "Training"],
+    gradient: "from-rose-500 to-pink-500",
   },
 ];
 
@@ -252,7 +278,7 @@ export default function CapabilitiesSection() {
                 animate={isInView ? { y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Engineering strengths
+                Complete IT services
               </motion.span>
             </span>
             <span className="block overflow-hidden">
@@ -262,7 +288,7 @@ export default function CapabilitiesSection() {
                 animate={isInView ? { y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                built for scale
+                for your business
               </motion.span>
             </span>
           </motion.h2>
@@ -273,13 +299,13 @@ export default function CapabilitiesSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-body-lg text-devflow-gray-300"
           >
-            We don&apos;t just build websites. We engineer digital systems that
-            perform under pressure and grow with your business.
+            From AI-powered solutions to enterprise ERP systems, we deliver
+            end-to-end IT services that transform businesses and drive growth.
           </motion.p>
         </div>
 
         {/* Capabilities grid */}
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {capabilities.map((capability, index) => (
             <CapabilityCard
               key={capability.id}

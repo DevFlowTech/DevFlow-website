@@ -10,7 +10,7 @@ const organizationSchema = {
   alternateName: 'DevFlow',
   url: 'https://devflow.co.in',
   logo: 'https://devflow.co.in/logo.png',
-  description: 'High-performance digital experiences engineered for businesses that demand precision, speed, and measurable impact. Elite web development for founders and agencies.',
+  description: 'Full-service IT company delivering AI solutions, enterprise ERP systems, custom software development, and digital transformation services for businesses worldwide.',
   foundingDate: '2025',
   sameAs: [
     'https://twitter.com/devflowtechnology',
@@ -35,7 +35,7 @@ const professionalServiceSchema = {
   '@type': 'ProfessionalService',
   '@id': 'https://devflow.co.in/#service',
   name: 'DevFlow Technology',
-  description: 'Premium web engineering and development services for businesses. We specialize in high-performance websites, custom web applications, and conversion-focused digital experiences.',
+  description: 'Full-service IT company offering AI & ML solutions, enterprise ERP systems, custom web development, mobile apps, cloud infrastructure, and 24/7 IT support.',
   url: 'https://devflow.co.in',
   logo: 'https://devflow.co.in/logo.png',
   image: 'https://devflow.co.in/og-image.png',
@@ -48,38 +48,54 @@ const professionalServiceSchema = {
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Web Development Services',
+    name: 'IT Services',
     itemListElement: [
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Custom Web Engineering',
-          description: 'Bespoke web applications built with modern frameworks like Next.js, React, and TypeScript for sub-second experiences.',
+          name: 'AI & Machine Learning Solutions',
+          description: 'Intelligent solutions powered by cutting-edge AI including machine learning models, NLP, computer vision, and custom AI integrations.',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'High-Performance Websites',
-          description: 'Lightning-fast business and agency websites optimized for Core Web Vitals, lazy loading, and edge caching.',
+          name: 'Enterprise ERP Systems',
+          description: 'End-to-end ERP solutions including inventory management, HR, accounting, CRM, and supply chain management.',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Conversion-Focused Experiences',
-          description: 'Strategic digital experiences designed around user research, A/B tested solutions for maximum conversions.',
+          name: 'Custom Web Development',
+          description: 'Bespoke web applications built with modern frameworks like Next.js, React, and TypeScript for high-performance experiences.',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Scalable Systems Design',
-          description: 'Architecture that grows with your business using microservices, API design, and cloud-native solutions.',
+          name: 'Mobile App Development',
+          description: 'Native and cross-platform mobile applications for iOS and Android using React Native and Flutter.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Cloud & DevOps Services',
+          description: 'Cloud infrastructure setup, CI/CD pipelines, AWS, Azure, and GCP deployments with automated scaling.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'IT Consulting & Support',
+          description: 'Strategic technology consulting, digital transformation, system audits, security assessments, and 24/7 support.',
         },
       },
     ],

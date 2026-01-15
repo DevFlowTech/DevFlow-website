@@ -175,7 +175,7 @@ export default function HeroSection() {
               </LineReveal>
               <LineReveal delay={0.4}>
                 <h1 className="font-display text-display-lg lg:text-display-xl text-white text-balance">
-                  web experiences
+                  digital solutions
                 </h1>
               </LineReveal>
             </div>
@@ -187,8 +187,8 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-body-xl text-devflow-gray-200 max-w-lg mx-auto lg:mx-0 mb-10"
             >
-              High-performance digital products engineered for businesses that
-              demand precision, speed, and measurable impact.
+              From AI solutions to enterprise ERP systems, we deliver complete
+              IT services that transform businesses and drive measurable growth.
             </motion.p>
 
             {/* CTAs - Clean row layout with proper spacing */}
