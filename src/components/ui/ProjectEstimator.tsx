@@ -101,13 +101,13 @@ export default function ProjectEstimator() {
 
   return (
     <>
-      {/* Trigger Button */}
+      {/* Trigger Button - Lime Green to match theme */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 left-8 z-50 px-4 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white flex items-center gap-2 shadow-lg"
+        className="fixed bottom-24 left-8 z-50 px-4 py-3 rounded-full bg-devflow-green text-devflow-black flex items-center gap-2 shadow-lg font-semibold"
         whileHover={{
           scale: 1.05,
-          boxShadow: "0 0 30px rgba(168, 85, 247, 0.5)",
+          boxShadow: "0 0 30px rgba(186, 230, 84, 0.5)",
         }}
         whileTap={{ scale: 0.95 }}
         initial={{ x: -100, opacity: 0 }}
@@ -127,7 +127,7 @@ export default function ProjectEstimator() {
             d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
           />
         </svg>
-        <span className="font-medium text-sm">Get Estimate</span>
+        <span className="text-sm">Get Estimate</span>
       </motion.button>
 
       {/* Modal */}
@@ -148,8 +148,8 @@ export default function ProjectEstimator() {
               className="w-full max-w-lg bg-devflow-dark border border-white/10 rounded-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Header */}
-              <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 p-6 border-b border-white/10">
+              {/* Header - Lime Green Gradient */}
+              <div className="bg-gradient-to-r from-devflow-green/20 to-emerald-500/20 p-6 border-b border-white/10">
                 <div className="flex items-center justify-between">
                   <div>
                     <h2 className="text-xl font-bold text-white">
@@ -179,13 +179,13 @@ export default function ProjectEstimator() {
                   </button>
                 </div>
 
-                {/* Progress */}
+                {/* Progress - Lime Green */}
                 <div className="flex gap-2 mt-4">
                   {[1, 2, 3].map((s) => (
                     <div
                       key={s}
                       className={`flex-1 h-1 rounded-full transition-colors ${
-                        s <= step ? "bg-purple-500" : "bg-white/10"
+                        s <= step ? "bg-devflow-green" : "bg-white/10"
                       }`}
                     />
                   ))}
@@ -213,7 +213,7 @@ export default function ProjectEstimator() {
                             onClick={() => setSelectedType(type.id)}
                             className={`p-4 rounded-xl border text-left transition-all ${
                               selectedType === type.id
-                                ? "border-purple-500 bg-purple-500/10"
+                                ? "border-devflow-green bg-devflow-green/10"
                                 : "border-white/10 hover:border-white/20"
                             }`}
                           >
@@ -247,7 +247,7 @@ export default function ProjectEstimator() {
                             onClick={() => toggleFeature(feature.id)}
                             className={`p-3 rounded-lg border text-left transition-all ${
                               selectedFeatures.includes(feature.id)
-                                ? "border-purple-500 bg-purple-500/10"
+                                ? "border-devflow-green bg-devflow-green/10"
                                 : "border-white/10 hover:border-white/20"
                             }`}
                           >
@@ -281,7 +281,7 @@ export default function ProjectEstimator() {
                             onClick={() => setSelectedTimeline(timeline.id)}
                             className={`w-full p-4 rounded-xl border text-left transition-all ${
                               selectedTimeline === timeline.id
-                                ? "border-purple-500 bg-purple-500/10"
+                                ? "border-devflow-green bg-devflow-green/10"
                                 : "border-white/10 hover:border-white/20"
                             }`}
                           >
@@ -307,9 +307,9 @@ export default function ProjectEstimator() {
                       animate={{ opacity: 1, scale: 1 }}
                     >
                       <div className="text-center">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-4">
+                        <div className="w-16 h-16 rounded-full bg-devflow-green flex items-center justify-center mx-auto mb-4">
                           <svg
-                            className="w-8 h-8 text-white"
+                            className="w-8 h-8 text-devflow-black"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -331,7 +331,7 @@ export default function ProjectEstimator() {
                           <p className="text-sm text-devflow-gray-400 mb-2">
                             {estimate.projectType}
                           </p>
-                          <p className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                          <p className="text-4xl font-bold text-devflow-green">
                             {formatPrice(estimate.budget.min)} -{" "}
                             {formatPrice(estimate.budget.max)}
                           </p>
@@ -348,7 +348,7 @@ export default function ProjectEstimator() {
                                 {estimate.features.map((f) => (
                                   <span
                                     key={f}
-                                    className="px-2 py-1 text-xs bg-white/10 rounded-full text-white"
+                                    className="px-2 py-1 text-xs bg-devflow-green/20 rounded-full text-devflow-green"
                                   >
                                     {f}
                                   </span>
@@ -389,7 +389,7 @@ export default function ProjectEstimator() {
                         }
                       }}
                       disabled={step === 1 && !selectedType}
-                      className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white font-medium disabled:opacity-50 hover:opacity-90 transition-opacity"
+                      className="flex-1 px-6 py-3 bg-devflow-green rounded-xl text-devflow-black font-semibold disabled:opacity-50 hover:opacity-90 transition-opacity"
                     >
                       {step === 3 ? "Get Estimate" : "Next"}
                     </button>
@@ -405,7 +405,7 @@ export default function ProjectEstimator() {
                     <a
                       href="#contact"
                       onClick={() => setIsOpen(false)}
-                      className="flex-1 px-6 py-3 bg-devflow-green rounded-xl text-devflow-black font-medium text-center hover:opacity-90 transition-opacity"
+                      className="flex-1 px-6 py-3 bg-devflow-green rounded-xl text-devflow-black font-semibold text-center hover:opacity-90 transition-opacity"
                     >
                       Get Exact Quote
                     </a>

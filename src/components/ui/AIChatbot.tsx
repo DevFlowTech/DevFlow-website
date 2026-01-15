@@ -181,10 +181,10 @@ export default function AIChatbot() {
         </AnimatePresence>
       </motion.button>
 
-      {/* Notification dot */}
+      {/* Notification dot - Lime Green */}
       {!isOpen && (
         <motion.div
-          className="fixed bottom-[7.5rem] right-8 z-50 w-4 h-4 rounded-full bg-red-500"
+          className="fixed bottom-[7.5rem] right-8 z-50 w-4 h-4 rounded-full bg-devflow-green shadow-[0_0_10px_rgba(186,230,84,0.6)]"
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 1, repeat: Infinity }}
         />
