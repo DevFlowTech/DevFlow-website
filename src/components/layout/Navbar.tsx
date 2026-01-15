@@ -40,10 +40,7 @@ export default function Navbar() {
         <nav className="section-container">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link 
-              href="/" 
-              className="flex items-center group"
-            >
+            <Link href="/" className="flex items-center group">
               <Image
                 src="/logo.png"
                 alt="DevFlow Technology"
@@ -85,23 +82,24 @@ export default function Navbar() {
                   href="#contact"
                   className="group relative px-6 py-2.5 font-semibold text-sm rounded-lg overflow-hidden transition-all duration-300"
                   style={{
-                    backgroundColor: '#bae654',
-                    color: '#0A0A0A',
-                    boxShadow: 'none',
+                    backgroundColor: "#bae654",
+                    color: "#0A0A0A",
+                    boxShadow: "none",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 20px rgba(186, 230, 84, 0.4)';
-                    e.currentTarget.style.transform = 'scale(1.02)';
+                    e.currentTarget.style.boxShadow =
+                      "0 0 20px rgba(186, 230, 84, 0.4)";
+                    e.currentTarget.style.transform = "scale(1.02)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = 'none';
-                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = "none";
+                    e.currentTarget.style.transform = "scale(1)";
                   }}
                 >
                   <span className="relative z-10">Start a Project</span>
-                  <div 
+                  <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                    style={{ backgroundColor: "rgba(255, 255, 255, 0.15)" }}
                   />
                 </Link>
               </motion.div>
@@ -115,15 +113,24 @@ export default function Navbar() {
             >
               <div className="w-6 h-5 flex flex-col justify-between">
                 <motion.span
-                  animate={{ rotate: isMobileMenuOpen ? 45 : 0, y: isMobileMenuOpen ? 8 : 0 }}
+                  animate={{
+                    rotate: isMobileMenuOpen ? 45 : 0,
+                    y: isMobileMenuOpen ? 8 : 0,
+                  }}
                   className="w-full h-0.5 bg-current rounded-full origin-left"
                 />
                 <motion.span
-                  animate={{ opacity: isMobileMenuOpen ? 0 : 1, scaleX: isMobileMenuOpen ? 0 : 1 }}
+                  animate={{
+                    opacity: isMobileMenuOpen ? 0 : 1,
+                    scaleX: isMobileMenuOpen ? 0 : 1,
+                  }}
                   className="w-full h-0.5 bg-current rounded-full"
                 />
                 <motion.span
-                  animate={{ rotate: isMobileMenuOpen ? -45 : 0, y: isMobileMenuOpen ? -8 : 0 }}
+                  animate={{
+                    rotate: isMobileMenuOpen ? -45 : 0,
+                    y: isMobileMenuOpen ? -8 : 0,
+                  }}
                   className="w-full h-0.5 bg-current rounded-full origin-left"
                 />
               </div>

@@ -1,15 +1,21 @@
 {
-  "name": "DevFlow Technology",
+  "name": "DevFlow Technology - AI Agency & IT Company",
   "short_name": "DevFlow",
-  "description": "Premium web engineering for businesses that demand excellence. High-performance websites and applications built with Next.js, React, and TypeScript.",
+  "description": "Leading AI agency and web development company in India. We build AI solutions, ERP systems, custom web apps, mobile applications, and cloud services for businesses worldwide.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
-  "theme_color": "#CDEA68",
+  "theme_color": "#bae654",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en",
-  "categories": ["business", "productivity", "technology"],
+  "categories": [
+    "business",
+    "productivity",
+    "technology",
+    "software",
+    "development"
+  ],
   "icons": [
     {
       "src": "/favicon.ico",

@@ -94,35 +94,33 @@ export const metadata: Metadata = {
     "conversion focused web design",
     "scalable web applications",
   ],
-  
+
   // Authorship
-  authors: [
-    { name: "DevFlow Technology", url: siteUrl },
-  ],
+  authors: [{ name: "DevFlow Technology", url: siteUrl }],
   creator: "DevFlow Technology",
   publisher: "DevFlow Technology",
-  
+
   // Canonical URL
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
   },
-  
+
   // Category
   category: "technology",
-  
+
   // App info
   applicationName: "DevFlow Technology",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
-  
+
   // Format detection
   formatDetection: {
     email: true,
     address: true,
     telephone: true,
   },
-  
+
   // Open Graph
   openGraph: {
     type: "website",
@@ -149,7 +147,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  
+
   // Twitter
   twitter: {
     card: "summary_large_image",
@@ -163,7 +161,7 @@ export const metadata: Metadata = {
       alt: "DevFlow Technology - AI Agency & Web Development Company India",
     },
   },
-  
+
   // Robots
   robots: {
     index: true,
@@ -178,23 +176,24 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  
-  // Icons - only include files that exist
+
+  // Icons - for PWA and browsers
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
-  
-  // Manifest - commented out until icons are created
-  // manifest: "/manifest.json",
-  
+
+  // Manifest for PWA support
+  manifest: "/manifest.json",
+
   // Verification - Add your verification codes here when available
   verification: {
     google: "your-google-verification-code", // Replace with actual code
     yandex: "your-yandex-verification-code", // Replace with actual code
     // bing: "your-bing-verification-code",
   },
-  
+
   // Other metadata
   other: {
     "msapplication-TileColor": "#0a0a0a",
@@ -220,11 +219,11 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        
+
         {/* DNS prefetch for potential external resources */}
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        
+
         {/* Preload critical fonts */}
         <link
           rel="preload"
@@ -235,10 +234,10 @@ export default function RootLayout({
       <body className="antialiased">
         {/* Custom Cursor for premium interactions */}
         <CustomCursor />
-        
+
         {/* Structured Data for SEO */}
         <StructuredData />
-        
+
         {/* Skip to main content for accessibility */}
         <a
           href="#main-content"
@@ -246,18 +245,18 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        
+
         {/* Noise overlay for texture */}
         <div className="noise-overlay" aria-hidden="true" />
-        
+
         {/* Navigation */}
         <Navbar />
-        
+
         {/* Main content */}
         <main id="main-content" role="main">
           {children}
         </main>
-        
+
         {/* Footer */}
         <Footer />
       </body>
