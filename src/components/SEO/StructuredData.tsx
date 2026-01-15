@@ -107,9 +107,9 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': 'https://devflow.co.in/#website',
-  name: 'DevFlow Technology',
+  name: 'DevFlow Technology - AI Agency & Web Development Company',
   url: 'https://devflow.co.in',
-  description: 'World-class web engineering for businesses that demand precision, speed, and measurable impact.',
+  description: 'Leading AI agency and web development company in India. We build AI solutions, ERP systems, web apps, mobile apps, and provide cloud services.',
   publisher: {
     '@type': 'Organization',
     name: 'DevFlow Technology',
@@ -128,34 +128,50 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What services does DevFlow Technology offer?',
+      name: 'What services does DevFlow Technology offer as an IT company?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'DevFlow Technology offers premium web engineering services including custom web application development, high-performance website creation, conversion-focused UX design, and scalable systems architecture. We specialize in Next.js, React, TypeScript, and modern cloud infrastructure.',
+        text: 'DevFlow Technology is a full-service IT company offering AI & Machine Learning solutions, Enterprise ERP systems, custom web development, mobile app development (iOS & Android), cloud & DevOps services, and 24/7 IT consulting and support. We help businesses with digital transformation using cutting-edge technologies.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How long does a typical web development project take?',
+      name: 'Is DevFlow Technology an AI agency?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Project timelines vary based on complexity. A standard high-performance website typically takes 4-8 weeks, while complex web applications may require 8-16 weeks. We follow a structured process: Discovery, Design, Build, and Launch & Optimize.',
+        text: 'Yes, DevFlow Technology is a leading AI agency in India. We specialize in AI solutions including ChatGPT integrations, custom LLMs, machine learning models, computer vision, NLP, and AI automation. We help businesses leverage artificial intelligence to improve operations and customer experiences.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What technologies does DevFlow use?',
+      name: 'What makes DevFlow the best web development company?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We use an enterprise-grade modern stack including Next.js, React, TypeScript, Tailwind CSS, Framer Motion, Vercel, PostgreSQL, and Prisma. This ensures production-ready, scalable, and maintainable applications.',
+        text: 'DevFlow Technology stands out as a top web development agency because we use modern technologies like Next.js, React, and TypeScript to build high-performance, SEO-optimized websites. We focus on conversion optimization, fast loading speeds (under 1 second), and scalable architecture that grows with your business.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How can I start a project with DevFlow Technology?',
+      name: 'Does DevFlow Technology build ERP systems?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'You can start by contacting us through our website contact form or emailing devflowtechnology@gmail.com. We typically respond within 24 hours and schedule a consultation to discuss your project requirements.',
+        text: 'Yes, we develop custom enterprise ERP systems tailored to your business needs. Our ERP solutions include inventory management, HR & payroll, accounting, CRM, supply chain management, and business analytics - all unified in one powerful platform.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can DevFlow Technology develop mobile apps?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely! We are a full-service mobile app development company. We build native iOS and Android apps, as well as cross-platform applications using React Native and Flutter. Our mobile apps are designed for exceptional user experience and performance.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can I hire DevFlow Technology for my project?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You can start by contacting us through our website contact form or emailing devflowtechnology@gmail.com. We offer flexible engagement models including project-based work, dedicated teams, and ongoing retainer services. We typically respond within 24 hours to discuss your project requirements.',
       },
     },
   ],

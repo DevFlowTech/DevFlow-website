@@ -21,41 +21,78 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   // Basic metadata
   title: {
-    default: "DevFlow Technology | World-Class Web Engineering",
-    template: "%s | DevFlow Technology",
+    default: "DevFlow Technology | AI Agency & Web Development Company India",
+    template: "%s | DevFlow Technology - IT Solutions",
   },
   description:
-    "Premium web engineering for businesses that demand excellence. We build high-performance websites and applications with Next.js, React, and TypeScript. Fast, scalable, conversion-focused digital experiences.",
+    "Leading AI agency & web development company in India. We build AI solutions, enterprise ERP systems, custom web apps, mobile applications & cloud services. Transform your business with DevFlow Technology - your trusted IT partner for digital success.",
   keywords: [
-    // Primary keywords
-    "web development company",
-    "web engineering services",
-    "Next.js development",
-    "React development agency",
-    "TypeScript development",
-    // Service keywords
-    "high-performance websites",
-    "enterprise web development",
-    "custom web applications",
-    "premium web design",
-    "conversion optimization",
-    "website performance optimization",
-    // Tech stack keywords
-    "Next.js agency",
-    "React development company",
-    "Tailwind CSS development",
-    "Vercel deployment",
-    "PostgreSQL development",
-    // Location/market keywords
+    // AI Agency Keywords
+    "AI agency",
+    "AI agency India",
+    "artificial intelligence company",
+    "AI solutions company",
+    "AI development services",
+    "machine learning agency",
+    "AI consulting firm",
+    "ChatGPT integration services",
+    "AI automation company",
+    "custom AI solutions",
+    // Web Development Agency Keywords
+    "web development agency",
+    "web development company India",
+    "website development company",
+    "web development services",
+    "custom web development",
     "professional web development",
-    "startup web development",
-    "SaaS development",
-    "e-commerce development",
-    // Long-tail keywords
-    "fast loading websites",
+    "best web development company",
+    "affordable web development",
+    "website design and development",
+    // IT Company Keywords
+    "IT company India",
+    "IT services company",
+    "software development company",
+    "IT solutions provider",
+    "technology company India",
+    "digital transformation company",
+    "IT consulting company",
+    // ERP Keywords
+    "ERP development company",
+    "enterprise software development",
+    "custom ERP solutions",
+    "ERP software India",
+    "business management software",
+    // Mobile App Keywords
+    "mobile app development company",
+    "app development agency",
+    "iOS app development",
+    "Android app development",
+    "React Native development",
+    // Cloud & DevOps Keywords
+    "cloud services company",
+    "DevOps services India",
+    "AWS consulting",
+    "cloud migration services",
+    // Tech Stack Keywords
+    "Next.js development company",
+    "React development agency",
+    "TypeScript experts",
+    "Node.js development",
+    "full stack development",
+    // Location Keywords
+    "software company India",
+    "IT company near me",
+    "web development agency near me",
+    "tech startup India",
+    // Long-tail Keywords
+    "hire AI developers",
+    "outsource web development",
+    "startup tech partner",
+    "enterprise web solutions",
+    "high-performance websites",
     "SEO optimized websites",
-    "mobile responsive web design",
-    "scalable web architecture",
+    "conversion focused web design",
+    "scalable web applications",
   ],
   
   // Authorship
@@ -92,15 +129,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "DevFlow Technology",
-    title: "DevFlow Technology | World-Class Web Engineering",
+    title: "DevFlow Technology | AI Agency & Web Development Company India",
     description:
-      "Premium web engineering for businesses that demand excellence. High-performance websites and applications built with Next.js, React, and TypeScript.",
+      "Leading AI agency & IT company in India. We build AI solutions, enterprise ERP systems, custom web apps, mobile applications & cloud services. Your trusted tech partner for digital transformation.",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "DevFlow Technology - World-Class Web Engineering",
+        alt: "DevFlow Technology - AI Agency & Web Development Company India",
         type: "image/png",
       },
       {
@@ -118,12 +155,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@devflowtechnology",
     creator: "@devflowtechnology",
-    title: "DevFlow Technology | World-Class Web Engineering",
+    title: "DevFlow Technology | AI Agency & Web Development Company India",
     description:
-      "Premium web engineering for businesses that demand excellence. High-performance websites and applications built with Next.js, React, and TypeScript.",
+      "Leading AI agency & IT company. We build AI solutions, ERP systems, web apps, mobile apps & cloud services. Transform your business with DevFlow.",
     images: {
       url: `${siteUrl}/og-image.png`,
-      alt: "DevFlow Technology - World-Class Web Engineering",
+      alt: "DevFlow Technology - AI Agency & Web Development Company India",
     },
   },
   
