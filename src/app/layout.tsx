@@ -7,6 +7,8 @@ import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/ui/BackToTop";
 import PageLoader from "@/components/ui/PageLoader";
+import AIChatbot from "@/components/ui/AIChatbot";
+import ProjectEstimator from "@/components/ui/ProjectEstimator";
 
 // Base URL for the site
 const siteUrl = "https://devflow.co.in";
@@ -271,6 +273,12 @@ export default function RootLayout({
 
         {/* Back to Top Button */}
         <BackToTop />
+
+        {/* AI Chatbot */}
+        <AIChatbot />
+
+        {/* Project Estimator */}
+        <ProjectEstimator />
       </body>
     </html>
   );
