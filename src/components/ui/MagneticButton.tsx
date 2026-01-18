@@ -1,121 +1,49 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useRef, useState } from "react";
-import Link from "next/link";
-
-interface MagneticButtonProps {
-  children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-  href?: string;
-  strength?: number;
-}
+import { useRef, useState, MouseEvent } from "react";
+import { motion } from "framer-motion";
 
 export default function MagneticButton({
   children,
   className = "",
-  onClick,
-  href,
-  strength = 0.3,
-}: MagneticButtonProps) {
+  strength = 30, // How strong the attraction is
+}: {
+  children: React.ReactNode;
+  className?: string;
+  strength?: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = ref.current!.getBoundingClientRect();
 
-  const springConfig = { damping: 20, stiffness: 150 };
-  const xSpring = useSpring(x, springConfig);
-  const ySpring = useSpring(y, springConfig);
+    // Calculate center of button
+    const centerX = left + width / 2;
+    const centerY = top + height / 2;
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current) return;
+    // Calculate distance from center
+    const x = (clientX - centerX) / strength;
+    const y = (clientY - centerY) / strength;
 
-    const rect = ref.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    const distanceX = e.clientX - centerX;
-    const distanceY = e.clientY - centerY;
-
-    x.set(distanceX * strength);
-    y.set(distanceY * strength);
+    setPosition({ x, y });
   };
 
   const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-    setIsHovered(false);
+    setPosition({ x: 0, y: 0 });
   };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  // For internal links (starting with #), use Link
-  const isInternalLink = href?.startsWith("#");
-  
-  if (href && isInternalLink) {
-    return (
-      <motion.div
-        ref={ref}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onMouseEnter={handleMouseEnter}
-        style={{ x: xSpring, y: ySpring }}
-        className="inline-flex"
-        data-magnetic
-      >
-        <Link
-          href={href}
-          className={className}
-          onClick={onClick}
-        >
-          {children}
-        </Link>
-      </motion.div>
-    );
-  }
-
-  if (href) {
-    return (
-      <motion.div
-        ref={ref}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onMouseEnter={handleMouseEnter}
-        style={{ x: xSpring, y: ySpring }}
-        className="inline-flex"
-        data-magnetic
-      >
-        <a
-          href={href}
-          className={className}
-          onClick={onClick}
-        >
-          {children}
-        </a>
-      </motion.div>
-    );
-  }
 
   return (
     <motion.div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      onMouseEnter={handleMouseEnter}
-      style={{ x: xSpring, y: ySpring }}
-      className="inline-flex"
-      data-magnetic
+      animate={{ x: position.x, y: position.y }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      className={className}
     >
-      <button
-        className={className}
-        onClick={onClick}
-      >
-        {children}
-      </button>
+      {children}
     </motion.div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import TiltCard from "@/components/ui/TiltCard";
 import {
   staggerContainer,
   staggerItem,
@@ -10,7 +11,10 @@ import {
 
 export default function CaseStudySection() {
   return (
-    <section id="work" className="py-28 lg:py-36 bg-devflow-charcoal">
+    <section
+      id="work"
+      className="py-24 lg:py-32 bg-devflow-charcoal overflow-hidden"
+    >
       <div className="section-container">
         {/* Header */}
         <motion.div
@@ -22,74 +26,82 @@ export default function CaseStudySection() {
         >
           <motion.span
             variants={staggerItem}
-            className="text-sm font-medium text-devflow-green uppercase tracking-widest mb-5 block"
+            className="text-sm font-medium text-devflow-green uppercase tracking-widest mb-4 block"
           >
             Case Study
           </motion.span>
-
           <motion.h2
             variants={staggerItem}
-            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight"
+            className="font-display text-3xl md:text-5xl font-semibold text-white leading-tight tracking-tight"
           >
-            How We Helped a D2C Brand Cut Order Processing Time by 70%
+            Scaling Operations for a Fast-Growing{" "}
+            <span className="text-devflow-green">D2C Brand</span>
           </motion.h2>
         </motion.div>
 
-        {/* Case Study Content */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Content */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left Column: Narrative */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
             variants={staggerContainer}
-            className="lg:col-span-2 space-y-6"
+            className="space-y-10"
           >
-            {/* Context */}
-            <motion.div
-              variants={staggerItem}
-              className="p-8 bg-devflow-dark border border-white/[0.06] rounded-xl"
-            >
-              <h3 className="text-lg font-medium text-white mb-4">
-                The Context
+            {/* The Challenge */}
+            <motion.div variants={staggerItem}>
+              <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center text-sm font-bold">
+                  1
+                </span>
+                The Challenge
               </h3>
-              <p className="text-devflow-gray-300 leading-relaxed">
-                A fast-growing direct-to-consumer brand was processing 500+
-                orders daily using a combination of Shopify admin, Google
-                Sheets, and WhatsApp messages. The ops team spent 4 hours every
-                morning just reconciling data.
+              <p className="text-devflow-gray-300 leading-relaxed text-lg">
+                A D2C brand processing 500+ daily orders was drowning in manual
+                workflows. Data lived in Google Sheets, Shopify, and WhatsApp.
+                The ops team lost
+                <span className="text-white font-medium">
+                  {" "}
+                  4 hours every morning
+                </span>{" "}
+                just reconciling numbers.
               </p>
             </motion.div>
 
-            {/* What We Built */}
-            <motion.div
-              variants={staggerItem}
-              className="p-8 bg-devflow-dark border border-white/[0.06] rounded-xl"
-            >
-              <h3 className="text-lg font-medium text-white mb-4">
-                What We Built
+            {/* The Solution */}
+            <motion.div variants={staggerItem}>
+              <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center text-sm font-bold">
+                  2
+                </span>
+                The Solution
               </h3>
+              <p className="text-devflow-gray-300 leading-relaxed text-lg mb-6">
+                We built a unified{" "}
+                <strong>Operations Operating System (OOS)</strong> that serves
+                as the single source of truth.
+              </p>
               <ul className="space-y-3">
                 {[
-                  "Unified order management dashboard (pulling from Shopify, warehouse, and payment systems)",
-                  "Automatic inventory sync with low-stock alerts",
+                  "Real-time 2-way sync with Shopify & Warehouse",
+                  "Automated low-stock alerts via Slack",
                   "One-click shipping label generation",
-                  "Daily automated reports to Slack",
+                  "Reconciliation in seconds, not hours",
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-devflow-gray-300"
+                    className="flex items-center gap-3 text-devflow-gray-400"
                   >
                     <svg
-                      className="w-4 h-4 text-devflow-green mt-1 flex-shrink-0"
+                      className="w-5 h-5 text-devflow-green flex-shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
-                      strokeWidth={2}
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
+                        strokeWidth={2}
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
@@ -99,142 +111,89 @@ export default function CaseStudySection() {
               </ul>
             </motion.div>
 
-            {/* Results - Enhanced visual emphasis */}
-            <motion.div
+            {/* Testimonial Compact */}
+            <motion.blockquote
               variants={staggerItem}
-              className="p-8 bg-devflow-green/[0.05] border border-devflow-green/20 rounded-xl"
+              className="p-6 border-l-4 border-devflow-green bg-devflow-dark/50"
             >
-              <h3 className="text-lg font-medium text-white mb-8 flex items-center gap-2">
-                <svg
-                  className="w-5 h-5 text-devflow-green"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                  />
-                </svg>
-                The Results
-              </h3>
-              <div className="grid sm:grid-cols-3 gap-6">
-                {[
-                  {
-                    metric: "70%",
-                    label: "Reduction in processing time",
-                    detail: "4 hours → 1.2 hours daily",
-                  },
-                  {
-                    metric: "0",
-                    label: "Missed orders in 3 months",
-                    detail: "Previously 5-10 per week",
-                  },
-                  {
-                    metric: "2",
-                    label: "Team members freed up",
-                    detail: "Reassigned to growth roles",
-                  },
-                ].map((result) => (
-                  <div
-                    key={result.label}
-                    className="p-4 bg-devflow-dark/50 rounded-lg border border-devflow-green/10"
-                  >
-                    <p className="text-5xl font-bold text-devflow-green mb-2 tracking-tight">
-                      {result.metric}
-                    </p>
-                    <p className="text-white font-medium mb-1 text-sm">
-                      {result.label}
-                    </p>
-                    <p className="text-xs text-devflow-gray-500">
-                      {result.detail}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+              <p className="text-devflow-gray-300 italic mb-4">
+                "They actually understand how startups work. We didn't have to
+                explain why speed mattered. They just delivered."
+              </p>
+              <footer className="text-sm text-white font-medium">
+                – Operations Lead, Series A Startup
+              </footer>
+            </motion.blockquote>
           </motion.div>
 
-          {/* Sidebar */}
+          {/* Right Column: Visual Impact (Tilt Card) */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={viewportOnce}
-            variants={staggerContainer}
-            className="space-y-6"
+            transition={{ duration: 0.6, ease: easeOut }}
+            className="lg:mt-8"
           >
-            {/* Project Details */}
-            <motion.div
-              variants={staggerItem}
-              className="p-6 bg-devflow-dark border border-white/[0.06] rounded-xl"
+            <TiltCard
+              tiltAmount={15}
+              glareOpacity={0.15}
+              className="rounded-2xl bg-gradient-to-br from-devflow-dark to-black border border-white/[0.08] shadow-2xl"
             >
-              <h4 className="text-xs font-medium text-devflow-gray-500 uppercase tracking-wider mb-5">
-                Project Details
-              </h4>
-              <dl className="space-y-4">
-                <div>
-                  <dt className="text-sm text-devflow-gray-500">Timeline</dt>
-                  <dd className="text-white font-medium">6 weeks</dd>
-                </div>
-                <div>
-                  <dt className="text-sm text-devflow-gray-500">Industry</dt>
-                  <dd className="text-white font-medium">E-commerce / D2C</dd>
-                </div>
-                <div>
-                  <dt className="text-sm text-devflow-gray-500">Team Size</dt>
-                  <dd className="text-white font-medium">2 engineers</dd>
-                </div>
-              </dl>
-            </motion.div>
+              <div className="p-8 md:p-10 relative overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-devflow-green/5 rounded-full blur-3xl" />
 
-            {/* Tech Stack */}
-            <motion.div
-              variants={staggerItem}
-              className="p-6 bg-devflow-dark border border-white/[0.06] rounded-xl"
-            >
-              <h4 className="text-xs font-medium text-devflow-gray-500 uppercase tracking-wider mb-5">
-                Tech Stack
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {["Next.js", "PostgreSQL", "Shopify API", "ShipRocket"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-white/[0.03] border border-white/[0.06] rounded text-sm text-devflow-gray-400 font-mono"
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
-              </div>
-            </motion.div>
+                <h3 className="text-sm font-medium text-devflow-gray-500 uppercase tracking-widest mb-8 relative z-10">
+                  Business Impact
+                </h3>
 
-            {/* Testimonial */}
-            <motion.div
-              variants={staggerItem}
-              className="p-6 bg-devflow-dark border border-white/[0.06] rounded-xl"
-            >
-              <svg
-                className="w-8 h-8 text-devflow-green/30 mb-4"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
-              <p className="text-devflow-gray-300 italic mb-5 leading-relaxed">
-                "We've worked with DevFlow on two projects now. They're fast,
-                they communicate well, and they actually understand how startups
-                work."
-              </p>
-              <div>
-                <p className="text-white font-medium">Operations Lead</p>
-                <p className="text-sm text-devflow-gray-500">
-                  Series A E-commerce Startup
-                </p>
+                <div className="space-y-8 relative z-10">
+                  <div>
+                    <p className="text-6xl md:text-7xl font-display font-bold text-white mb-2 tracking-tight">
+                      70%
+                    </p>
+                    <p className="text-lg text-devflow-green font-medium">
+                      Reduction in Processing Time
+                    </p>
+                    <p className="text-sm text-devflow-gray-500 mt-1">
+                      From 4 hours to ~1.2 hours daily
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-6 pt-8 border-t border-white/[0.06]">
+                    <div>
+                      <p className="text-3xl font-bold text-white mb-1">Zero</p>
+                      <p className="text-xs text-devflow-gray-400 uppercase tracking-wide">
+                        Missed Orders
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-3xl font-bold text-white mb-1">2x</p>
+                      <p className="text-xs text-devflow-gray-400 uppercase tracking-wide">
+                        Faster Shipments
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative UI Element representing 'Automation' */}
+                <div className="absolute bottom-6 right-6 p-3 rounded-lg bg-devflow-green/10 border border-devflow-green/20 backdrop-blur-md">
+                  <svg
+                    className="w-6 h-6 text-devflow-green animate-pulse"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
               </div>
-            </motion.div>
+            </TiltCard>
           </motion.div>
         </div>
       </div>

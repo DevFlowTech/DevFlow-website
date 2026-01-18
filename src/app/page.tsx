@@ -7,12 +7,16 @@ import CaseStudySection from "@/components/sections/CaseStudySection";
 import RiskReversalSection from "@/components/sections/RiskReversalSection";
 import FounderSection from "@/components/sections/FounderSection";
 import ContactSection from "@/components/sections/ContactSection";
+import TechStackSection from "@/components/sections/TechStackSection";
 
 export default function Home() {
   return (
     <>
       {/* Hero - Clear value proposition */}
       <HeroSection />
+
+      {/* Tech Stack Marquee - Social Proof via Technology */}
+      <TechStackSection />
 
       {/* Services Quick View - Scannable at a glance */}
       <ServicesQuickView />

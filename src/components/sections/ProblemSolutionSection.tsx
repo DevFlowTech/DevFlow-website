@@ -1,13 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  fadeUp,
   staggerContainer,
   staggerItem,
   viewportOnce,
   easeOut,
 } from "@/lib/motion";
+import SpotlightCard from "@/components/ui/SpotlightCard";
+import { TextReveal } from "@/components/ui/TextReveal";
 
 export default function ProblemSolutionSection() {
   return (
@@ -32,7 +34,9 @@ export default function ProblemSolutionSection() {
             variants={staggerItem}
             className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-8"
           >
-            You Need Software That Works — Not Compromises
+            <TextReveal>
+              You Need Software That Works — Not Compromises
+            </TextReveal>
           </motion.h2>
 
           <motion.div
@@ -88,7 +92,9 @@ export default function ProblemSolutionSection() {
             variants={staggerItem}
             className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-8"
           >
-            A Reliable Technical Partner. Not Just Another Vendor.
+            <TextReveal>
+              A Reliable Technical Partner. Not Just Another Vendor.
+            </TextReveal>
           </motion.h2>
 
           <motion.p
@@ -128,15 +134,18 @@ export default function ProblemSolutionSection() {
                   "Connect your existing tools into a unified workflow",
               },
             ].map((item) => (
-              <motion.div
-                key={item.title}
-                variants={staggerItem}
-                className="p-6 bg-devflow-charcoal border border-white/[0.06] rounded-xl transition-all duration-150 hover:border-white/10"
-              >
-                <h3 className="text-lg font-medium text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-devflow-gray-400">{item.description}</p>
+              <motion.div key={item.title} variants={staggerItem}>
+                <SpotlightCard
+                  className="h-full p-6 bg-devflow-charcoal border border-white/[0.06] rounded-xl transition-colors duration-200 hover:border-devflow-green/30"
+                  spotlightColor="rgba(186, 230, 84, 0.1)"
+                >
+                  <h3 className="text-lg font-medium text-white mb-2 relative z-20">
+                    {item.title}
+                  </h3>
+                  <p className="text-devflow-gray-400 relative z-20">
+                    {item.description}
+                  </p>
+                </SpotlightCard>
               </motion.div>
             ))}
           </motion.div>

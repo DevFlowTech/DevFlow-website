@@ -10,6 +10,7 @@ import {
   arrowSlide,
   easeOut,
 } from "@/lib/motion";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 const trustSignals = [
   { text: "Engineering-first approach" },
@@ -91,7 +92,7 @@ export default function HeroSection() {
             variants={staggerItem}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
-            <motion.div initial="rest" whileHover="hover" animate="rest">
+            <MagneticButton>
               <Link href="#contact" className="btn-primary min-w-[200px]">
                 Talk to Our Experts
                 <motion.svg
@@ -109,10 +110,13 @@ export default function HeroSection() {
                   />
                 </motion.svg>
               </Link>
-            </motion.div>
-            <Link href="#services" className="btn-secondary min-w-[200px]">
-              Explore Our Work
-            </Link>
+            </MagneticButton>
+
+            <MagneticButton>
+              <Link href="#services" className="btn-secondary min-w-[200px]">
+                Explore Our Work
+              </Link>
+            </MagneticButton>
           </motion.div>
 
           {/* Trust Strip */}

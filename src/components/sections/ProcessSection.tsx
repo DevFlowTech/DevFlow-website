@@ -1,139 +1,131 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  staggerContainer,
-  staggerItem,
-  viewportOnce,
-  easeOut,
-} from "@/lib/motion";
+import { staggerContainer, viewportOnce } from "@/lib/motion";
 
 const steps = [
   {
     number: "01",
-    title: "Discovery",
+    title: "Discovery & Strategy",
     duration: "Week 0",
     description:
-      "We spend 2-3 hours understanding your operations, your pain points, and what success looks like. No slides. Just conversation.",
-    outcome:
-      "Scope document with clear deliverables, timeline, and investment.",
+      "We dig deep into your operations. No generic questionnaires. We interview your team, map your workflows, and identify exactly where custom software will generate ROI.",
+    outcome: "Detailed Scope of Work & Fixed-Price Proposal",
   },
   {
     number: "02",
-    title: "Architecture",
+    title: "Architecture & Design",
     duration: "Week 1",
     description:
-      "We design the system before writing any code. You see the data model, user flows, and technical approach upfront.",
-    outcome: "Signed-off technical spec. No ambiguity.",
+      "Before a single line of code is written, we blueprint the entire system. You'll see clickable prototypes and database schemas, ensuring we're building exactly what you need.",
+    outcome: "Interactive Prototypes & Technical Spec",
   },
   {
     number: "03",
-    title: "Build",
+    title: "Agile Development",
     duration: "Weeks 2-6",
     description:
-      "We build in 2-week sprints. You see working software every two weeks. Not mockups. Working software.",
-    outcome:
-      "Functional system in your hands, not a staging server you'll never see.",
+      "We build in rapid 2-week sprints. You get access to a staging environment to test features as they're built. No black boxes. Real progress you can click.",
+    outcome: "Production-Ready Software delivered in sprints",
   },
   {
     number: "04",
-    title: "Launch & Support",
-    duration: "Week 6+",
+    title: "Deployment & Handoff",
+    duration: "Week 7+",
     description:
-      "We deploy, train your team, and stick around for 30 days to fix anything that breaks. Then we hand off clean code and documentation.",
-    outcome: "You own everything. No lock-in. No dependencies.",
+      "We handle the launch, configure your servers, and train your team. Post-launch, we provide 30 days of bug-fixing support and hand over clean, documented code.",
+    outcome: "Full IP Ownership & zero vendor lock-in",
   },
 ];
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-28 lg:py-36 bg-devflow-black">
-      <div className="section-container">
-        {/* Header */}
+    <section
+      id="process"
+      className="py-24 lg:py-32 bg-devflow-black relative overflow-hidden"
+    >
+      {/* Background decoration */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-devflow-green/20 to-transparent" />
+
+      <div className="section-container relative z-10">
         <motion.div
-          className="max-w-3xl mb-20"
+          className="text-center mb-20"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
           variants={staggerContainer}
         >
-          <motion.span
-            variants={staggerItem}
-            className="text-sm font-medium text-devflow-green uppercase tracking-widest mb-5 block"
-          >
-            How We Work
+          <motion.span className="text-sm font-medium text-devflow-green uppercase tracking-widest mb-4 block">
+            The Roadmap
           </motion.span>
-
-          <motion.h2
-            variants={staggerItem}
-            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-6"
-          >
-            Predictable Process. No Surprises.
+          <motion.h2 className="font-display text-3xl md:text-5xl font-semibold text-white mb-6">
+            From Chaos to <span className="text-devflow-green">Clarity</span>
           </motion.h2>
-
-          <motion.p
-            variants={staggerItem}
-            className="text-lg text-devflow-gray-300 leading-relaxed"
-          >
-            Most agencies disappear after the kickoff call. We don't. Here's
-            exactly what happens when you work with us:
+          <motion.p className="text-lg text-devflow-gray-300 max-w-2xl mx-auto">
+            A transparent, engineering-led process designed to deliver
+            high-quality software without the surprises.
           </motion.p>
         </motion.div>
 
-        {/* Process Steps */}
-        <div className="space-y-6">
+        <div className="relative max-w-4xl mx-auto">
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={viewportOnce}
-              transition={{
-                duration: 0.35,
-                delay: index * 0.1,
-                ease: easeOut,
-              }}
-              className="grid md:grid-cols-[100px_1fr] gap-6 md:gap-10"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`flex flex-col md:flex-row gap-8 md:gap-16 items-center mb-16 last:mb-0 group ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
             >
-              {/* Step Number & Duration */}
-              <div className="flex md:flex-col items-center md:items-start gap-4">
-                <div className="w-14 h-14 rounded-full bg-devflow-green/10 border border-devflow-green/20 flex items-center justify-center">
-                  <span className="text-devflow-green font-semibold">
-                    {step.number}
-                  </span>
-                </div>
-                <span className="text-sm text-devflow-gray-500">
-                  {step.duration}
+              {/* Timeline Dot (Center) */}
+              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-devflow-green bg-devflow-black z-10 group-hover:bg-devflow-green group-hover:scale-125 transition-all duration-300 shadow-[0_0_10px_rgba(186,230,84,0.3)]" />
+
+              {/* Number/Duration Side */}
+              <div
+                className={`flex-1 w-full md:w-auto text-left md:text-right ${index % 2 !== 0 ? "md:text-left" : ""}`}
+              >
+                <span className="text-6xl font-display font-bold text-white/[0.04] group-hover:text-white/[0.1] transition-colors duration-300">
+                  {step.number}
                 </span>
+                <p className="text-devflow-green font-mono text-sm mt-2">
+                  {step.duration}
+                </p>
               </div>
 
-              {/* Content */}
-              <div className="p-8 bg-devflow-charcoal border border-white/[0.06] rounded-xl">
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-devflow-gray-300 leading-relaxed mb-6">
-                  {step.description}
-                </p>
-                <div className="flex items-start gap-3 p-4 bg-devflow-green/[0.03] border border-devflow-green/10 rounded-lg">
-                  <svg
-                    className="w-5 h-5 text-devflow-green mt-0.5 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <div>
-                    <span className="text-sm font-medium text-devflow-green">
-                      Outcome
+              {/* Spacer for center alignment */}
+              <div className="hidden md:block w-px h-10" />
+
+              {/* Content Side */}
+              <div className="flex-1 w-full pl-16 md:pl-0">
+                <div className="relative p-8 rounded-2xl bg-devflow-charcoal border border-white/[0.06] group-hover:border-devflow-green/30 transition-all duration-300 hover:shadow-glow-green-sm">
+                  {/* Connector Line (Mobile only) */}
+                  <div className="md:hidden absolute top-1/2 -translate-y-1/2 -left-12 w-12 h-px bg-devflow-green/20" />
+
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-base text-devflow-gray-400 mb-5 leading-relaxed">
+                    {step.description}
+                  </p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+                    <svg
+                      className="w-4 h-4 text-devflow-green"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span className="text-sm text-devflow-gray-300 font-medium">
+                      {step.outcome}
                     </span>
-                    <p className="text-devflow-gray-400 mt-1">{step.outcome}</p>
                   </div>
                 </div>
               </div>
