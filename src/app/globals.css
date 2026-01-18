@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @import "tailwindcss";
 
 :root {
-  --font-inter: "Inter", system-ui, sans-serif;
-  --font-outfit: "Outfit", system-ui, sans-serif;
+  /* Mapping everything to Poppins as requested */
+  --font-inter: "Poppins", system-ui, sans-serif;
+  --font-outfit: "Poppins", system-ui, sans-serif;
   --font-jetbrains: "JetBrains Mono", monospace;
 
   /* Custom properties for dynamic theming */
@@ -103,13 +104,18 @@ h6 {
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 2px 12px rgba(186, 230, 84, 0.2), 0 0 0 0 rgba(186, 230, 84, 0);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow:
+    0 2px 12px rgba(186, 230, 84, 0.2),
+    0 0 0 0 rgba(186, 230, 84, 0);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(186, 230, 84, 0.35),
+  box-shadow:
+    0 6px 24px rgba(186, 230, 84, 0.35),
     0 0 0 1px rgba(186, 230, 84, 0.3);
 }
 
@@ -197,8 +203,12 @@ h6 {
     rgba(255, 255, 255, 0.1),
     transparent 50%
   );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -217,8 +227,10 @@ h6 {
     rgba(25, 25, 25, 0.7)
   );
   border-color: rgba(186, 230, 84, 0.15);
-  box-shadow: 0 8px 48px -12px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(186, 230, 84, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 8px 48px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(186, 230, 84, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transform: translateY(-4px);
 }
 
@@ -269,10 +281,8 @@ h6 {
 
 /* Grid line effect */
 .grid-lines {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.02) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
 }
@@ -292,7 +302,9 @@ h6 {
   height: 0.5rem;
   border-radius: 9999px;
   background-color: var(--devflow-green);
-  box-shadow: 0 0 10px var(--green-pulse), 0 0 20px var(--green-pulse),
+  box-shadow:
+    0 0 10px var(--green-pulse),
+    0 0 20px var(--green-pulse),
     0 0 30px var(--green-glow);
   animation: pulseGlow 2s ease-in-out infinite;
 }
@@ -528,7 +540,8 @@ html.is-animating {
     box-shadow: 0 0 20px rgba(186, 230, 84, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(186, 230, 84, 0.5),
+    box-shadow:
+      0 0 40px rgba(186, 230, 84, 0.5),
       0 0 60px rgba(186, 230, 84, 0.2);
   }
 }
@@ -658,7 +671,8 @@ html.is-animating {
 
 .card-lift:hover {
   transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5),
+  box-shadow:
+    0 20px 40px -15px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(186, 230, 84, 0.1);
 }
 
@@ -816,12 +830,16 @@ html.is-animating {
 
 /* Glow effect */
 .glow-green {
-  box-shadow: 0 0 20px rgba(186, 230, 84, 0.3), 0 0 40px rgba(186, 230, 84, 0.2),
+  box-shadow:
+    0 0 20px rgba(186, 230, 84, 0.3),
+    0 0 40px rgba(186, 230, 84, 0.2),
     0 0 60px rgba(186, 230, 84, 0.1);
 }
 
 .glow-purple {
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 40px rgba(168, 85, 247, 0.2),
+  box-shadow:
+    0 0 20px rgba(168, 85, 247, 0.3),
+    0 0 40px rgba(168, 85, 247, 0.2),
     0 0 60px rgba(168, 85, 247, 0.1);
 }
 

@@ -99,20 +99,33 @@ export default function CaseStudySection() {
               </ul>
             </motion.div>
 
-            {/* Results */}
+            {/* Results - Enhanced visual emphasis */}
             <motion.div
               variants={staggerItem}
-              className="p-8 bg-devflow-green/[0.03] border border-devflow-green/15 rounded-xl"
+              className="p-8 bg-devflow-green/[0.05] border border-devflow-green/20 rounded-xl"
             >
-              <h3 className="text-lg font-medium text-white mb-8">
+              <h3 className="text-lg font-medium text-white mb-8 flex items-center gap-2">
+                <svg
+                  className="w-5 h-5 text-devflow-green"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                  />
+                </svg>
                 The Results
               </h3>
-              <div className="grid sm:grid-cols-3 gap-8">
+              <div className="grid sm:grid-cols-3 gap-6">
                 {[
                   {
                     metric: "70%",
                     label: "Reduction in processing time",
-                    detail: "4 hours → 1.2 hours",
+                    detail: "4 hours → 1.2 hours daily",
                   },
                   {
                     metric: "0",
@@ -122,17 +135,20 @@ export default function CaseStudySection() {
                   {
                     metric: "2",
                     label: "Team members freed up",
-                    detail: "Moved to growth roles",
+                    detail: "Reassigned to growth roles",
                   },
                 ].map((result) => (
-                  <div key={result.label}>
-                    <p className="text-4xl font-semibold text-devflow-green mb-2">
+                  <div
+                    key={result.label}
+                    className="p-4 bg-devflow-dark/50 rounded-lg border border-devflow-green/10"
+                  >
+                    <p className="text-5xl font-bold text-devflow-green mb-2 tracking-tight">
                       {result.metric}
                     </p>
-                    <p className="text-white font-medium mb-1">
+                    <p className="text-white font-medium mb-1 text-sm">
                       {result.label}
                     </p>
-                    <p className="text-sm text-devflow-gray-500">
+                    <p className="text-xs text-devflow-gray-500">
                       {result.detail}
                     </p>
                   </div>

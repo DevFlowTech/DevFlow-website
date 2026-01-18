@@ -46,15 +46,15 @@ export default function ContactSection() {
               variants={staggerItem}
               className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-6"
             >
-              Let's Talk About What You're Building
+              Let's Explore If We're a Good Fit
             </motion.h2>
 
             <motion.p
               variants={staggerItem}
               className="text-lg text-devflow-gray-300"
             >
-              No pitch decks. No sales pressure. Just a conversation about your
-              operations and whether we can help.
+              No pitch decks. No sales pressure. Just a straightforward
+              conversation about your requirements and how we might help.
             </motion.p>
           </motion.div>
 
@@ -209,7 +209,7 @@ export default function ContactSection() {
                       Sending...
                     </>
                   ) : (
-                    "Book a 30-Minute Call"
+                    "Discuss Your Requirement"
                   )}
                 </button>
 

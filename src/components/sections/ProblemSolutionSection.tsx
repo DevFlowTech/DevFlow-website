@@ -25,14 +25,14 @@ export default function ProblemSolutionSection() {
             variants={staggerItem}
             className="text-sm font-medium text-devflow-green uppercase tracking-widest mb-5 block"
           >
-            The Problem
+            The Challenge
           </motion.span>
 
           <motion.h2
             variants={staggerItem}
             className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-8"
           >
-            Your Team Is Too Good to Be Stuck in Spreadsheets
+            You Need Software That Works — Not Compromises
           </motion.h2>
 
           <motion.div
@@ -40,18 +40,20 @@ export default function ProblemSolutionSection() {
             className="space-y-5 text-lg text-devflow-gray-300 leading-relaxed"
           >
             <p>
-              You've raised funding. You're hiring fast. But your operations
-              still run on duct-taped Google Sheets, Notion hacks, and manual
-              processes that break every week.
+              Growing businesses face a common dilemma: off-the-shelf tools
+              don't fit your workflow, and building custom software seems
+              expensive and risky.
             </p>
             <p>
-              You've tried no-code tools. They worked for a while. Now they
-              don't scale.
+              You've tried patching together spreadsheets, no-code tools, and
+              multiple SaaS subscriptions. It works — until it doesn't. Data
+              lives in silos. Manual processes create bottlenecks. And your team
+              spends more time managing tools than doing their actual work.
             </p>
             <p>
-              You could hire full-time engineers — but that's 3-6 months of
-              recruiting, onboarding, and hoping they build what you actually
-              need.
+              Hiring an in-house development team is a commitment you may not be
+              ready for. Offshore teams often deliver code without understanding
+              your business context.
             </p>
           </motion.div>
 
@@ -61,8 +63,8 @@ export default function ProblemSolutionSection() {
           >
             <p className="text-white font-medium mb-2">The result?</p>
             <p className="text-devflow-gray-400">
-              Your best people waste hours on admin work. Decisions get made on
-              bad data. And your ops team is burned out.
+              You're stuck between knowing what you need and finding someone who
+              can actually build it right.
             </p>
           </motion.div>
         </motion.div>
@@ -79,22 +81,22 @@ export default function ProblemSolutionSection() {
             variants={staggerItem}
             className="text-sm font-medium text-devflow-green uppercase tracking-widest mb-5 block"
           >
-            The Solution
+            Our Approach
           </motion.span>
 
           <motion.h2
             variants={staggerItem}
             className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-8"
           >
-            One Team. One System. Built for How You Actually Work.
+            A Reliable Technical Partner. Not Just Another Vendor.
           </motion.h2>
 
           <motion.p
             variants={staggerItem}
             className="text-lg text-devflow-gray-300 leading-relaxed mb-12"
           >
-            We embed with your team for 4-8 weeks and build the exact internal
-            tools you need:
+            We work closely with you to understand your business, then build
+            software that fits your exact needs:
           </motion.p>
 
           <motion.div
@@ -106,21 +108,24 @@ export default function ProblemSolutionSection() {
           >
             {[
               {
-                title: "Admin Panels",
+                title: "Modern Web Applications",
                 description:
-                  "Manage orders, users, content without touching code",
+                  "Fast, responsive applications built with proven technology",
               },
               {
-                title: "Operational Dashboards",
-                description: "Real-time visibility into what matters",
+                title: "Business Dashboards",
+                description:
+                  "Real-time insights from your data, visualized clearly",
               },
               {
-                title: "Workflow Automation",
-                description: "Replace manual processes with reliable systems",
+                title: "Process Automation",
+                description:
+                  "Eliminate repetitive tasks and reduce human error",
               },
               {
-                title: "Data Infrastructure",
-                description: "Clean data that you can actually trust",
+                title: "API & Integrations",
+                description:
+                  "Connect your existing tools into a unified workflow",
               },
             ].map((item) => (
               <motion.div
@@ -140,7 +145,7 @@ export default function ProblemSolutionSection() {
             variants={staggerItem}
             className="text-lg text-white font-medium mt-12"
           >
-            You get a working system. Your team gets their time back.
+            You get software that works. Your team gets their time back.
           </motion.p>
         </motion.div>
       </div>

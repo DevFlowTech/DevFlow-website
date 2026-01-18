@@ -92,7 +92,7 @@ export default function Navbar() {
                   href="#contact"
                   className="px-5 py-2.5 bg-devflow-green text-devflow-black font-semibold text-sm rounded-lg transition-all duration-150 hover:bg-devflow-green/90"
                 >
-                  Book a Call
+                  Let's Talk
                 </Link>
               </motion.div>
             </div>
@@ -189,7 +189,7 @@ export default function Navbar() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block text-center py-4 bg-devflow-green text-devflow-black font-semibold rounded-lg"
                   >
-                    Book a Call
+                    Let's Talk
                   </Link>
                 </motion.div>
               </div>

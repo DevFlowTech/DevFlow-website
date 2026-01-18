@@ -8,26 +8,55 @@ import {
   easeOut,
 } from "@/lib/motion";
 
-const tools = [
+// Clear service categories for BDE pitch
+const services = [
   {
-    type: "Order Management System",
-    useCase: "Track, modify, and fulfill orders without spreadsheets",
+    title: "Business Websites",
+    subtitle: "Performance-Focused",
+    description:
+      "High-performance websites that load fast, rank well, and convert visitors into customers. Built with modern architecture for speed and reliability.",
+    features: [
+      "SEO-optimized",
+      "Fast load times",
+      "Mobile-first design",
+      "Analytics integration",
+    ],
   },
   {
-    type: "Customer Support Dashboard",
-    useCase: "See full customer history in one place",
+    title: "Web Applications & Dashboards",
+    subtitle: "Data-Driven Interfaces",
+    description:
+      "Custom web applications with real-time data visualization, user management, and business logic tailored to your workflows.",
+    features: [
+      "Real-time updates",
+      "Role-based access",
+      "Data visualization",
+      "API integrations",
+    ],
   },
   {
-    type: "Inventory & Warehouse Tools",
-    useCase: "Real-time stock visibility across locations",
+    title: "Internal Tools & Automation",
+    subtitle: "Operational Efficiency",
+    description:
+      "Admin panels, CRM systems, and workflow automation tools that eliminate manual work and reduce operational overhead.",
+    features: [
+      "Process automation",
+      "Custom workflows",
+      "Team collaboration",
+      "Reporting systems",
+    ],
   },
   {
-    type: "Reporting & Analytics",
-    useCase: "Automated reports that update themselves",
-  },
-  {
-    type: "Approval Workflows",
-    useCase: "Multi-step processes that don't fall through cracks",
+    title: "Custom Software Solutions",
+    subtitle: "Enterprise-Grade",
+    description:
+      "End-to-end software development for complex business requirements. From architecture to deployment, we handle the full stack.",
+    features: [
+      "Scalable architecture",
+      "Security-first",
+      "Cloud deployment",
+      "Ongoing support",
+    ],
   },
 ];
 
@@ -57,66 +86,64 @@ export default function CoreServiceSection() {
             variants={staggerItem}
             className="text-sm font-medium text-devflow-green uppercase tracking-widest mb-5 block"
           >
-            What We Build
+            Our Services
           </motion.span>
 
           <motion.h2
             variants={staggerItem}
             className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-6"
           >
-            Custom Internal Tools. Built Right. Built Fast.
+            Engineering-First Software Development
           </motion.h2>
 
           <motion.p
             variants={staggerItem}
             className="text-lg text-devflow-gray-300 leading-relaxed"
           >
-            We don't build marketing sites or consumer apps. We build the
-            operational backbone that scaling startups need but never have time
-            to build themselves.
+            We specialize in building software that solves real business
+            problems — from high-performance websites to complex enterprise
+            applications. Every project is built with code quality, performance,
+            and long-term maintainability in mind.
           </motion.p>
         </motion.div>
 
-        {/* Tools Table */}
+        {/* Services Grid */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
           variants={staggerContainer}
-          className="mb-20"
+          className="grid md:grid-cols-2 gap-6 mb-20"
         >
-          <motion.h3
-            variants={staggerItem}
-            className="text-lg font-medium text-white mb-6"
-          >
-            What This Looks Like:
-          </motion.h3>
-          <motion.div
-            variants={staggerItem}
-            className="bg-devflow-dark border border-white/[0.06] rounded-xl overflow-hidden"
-          >
-            <div className="grid grid-cols-2 bg-white/[0.02] px-6 py-4 border-b border-white/[0.06]">
-              <span className="text-xs font-medium text-devflow-gray-400 uppercase tracking-wider">
-                Tool Type
-              </span>
-              <span className="text-xs font-medium text-devflow-gray-400 uppercase tracking-wider">
-                Example Use Case
-              </span>
-            </div>
-            {tools.map((tool, index) => (
-              <div
-                key={tool.type}
-                className={`grid grid-cols-2 px-6 py-4 ${
-                  index !== tools.length - 1
-                    ? "border-b border-white/[0.04]"
-                    : ""
-                } transition-colors duration-150 hover:bg-white/[0.02]`}
-              >
-                <span className="text-white font-medium">{tool.type}</span>
-                <span className="text-devflow-gray-400">{tool.useCase}</span>
+          {services.map((service) => (
+            <motion.div
+              key={service.title}
+              variants={staggerItem}
+              className="p-8 bg-devflow-dark border border-white/[0.06] rounded-xl hover:border-devflow-green/20 transition-all duration-300"
+            >
+              <div className="mb-4">
+                <span className="text-xs font-medium text-devflow-green uppercase tracking-wider">
+                  {service.subtitle}
+                </span>
               </div>
-            ))}
-          </motion.div>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {service.title}
+              </h3>
+              <p className="text-devflow-gray-400 mb-5 leading-relaxed">
+                {service.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {service.features.map((feature) => (
+                  <span
+                    key={feature}
+                    className="px-3 py-1 bg-white/[0.03] border border-white/[0.06] rounded-full text-xs text-devflow-gray-400"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Tech Stack */}
@@ -131,7 +158,7 @@ export default function CoreServiceSection() {
             variants={staggerItem}
             className="text-lg font-medium text-white mb-6"
           >
-            Our Stack:
+            Our Technology Stack:
           </motion.h3>
           <motion.div variants={staggerItem} className="flex flex-wrap gap-3">
             {techStack.map((tech) => (
@@ -147,12 +174,12 @@ export default function CoreServiceSection() {
             variants={staggerItem}
             className="text-devflow-gray-500 mt-5 text-sm"
           >
-            We pick boring, reliable technology. No experimental frameworks. No
-            tech debt surprises.
+            We choose proven, reliable technology. No experimental frameworks.
+            No tech debt surprises.
           </motion.p>
         </motion.div>
 
-        {/* Fit Check */}
+        {/* Working Style - Softer approach */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -160,7 +187,7 @@ export default function CoreServiceSection() {
           variants={staggerContainer}
           className="grid md:grid-cols-2 gap-6"
         >
-          {/* Good Fit */}
+          {/* What We Excel At */}
           <motion.div
             variants={staggerItem}
             className="p-8 bg-devflow-dark border border-devflow-green/15 rounded-xl"
@@ -181,14 +208,14 @@ export default function CoreServiceSection() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-white">Good Fit</h3>
+              <h3 className="text-lg font-medium text-white">We Excel At</h3>
             </div>
             <ul className="space-y-3">
               {[
-                "You have real operational pain (not just 'we want an app')",
-                "You can articulate what's broken today",
-                "You value speed and reliability over lowest price",
-                "You're ready to start within 2-4 weeks",
+                "Projects with clear business requirements and goals",
+                "Clients who value quality and long-term reliability",
+                "Collaborative relationships with regular communication",
+                "Work that challenges us technically and creatively",
               ].map((item) => (
                 <li
                   key={item}
@@ -213,7 +240,7 @@ export default function CoreServiceSection() {
             </ul>
           </motion.div>
 
-          {/* Not a Fit */}
+          {/* Honest About Limitations */}
           <motion.div
             variants={staggerItem}
             className="p-8 bg-devflow-dark border border-white/[0.06] rounded-xl"
@@ -230,18 +257,18 @@ export default function CoreServiceSection() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-white">Not a Fit</h3>
+              <h3 className="text-lg font-medium text-white">Worth Knowing</h3>
             </div>
             <ul className="space-y-3">
               {[
-                "You need a landing page or marketing site",
-                "You want to outsource and never talk to us",
-                "You're looking for the cheapest option",
-                "You don't have budget approval yet",
+                "We're a small team — we work selectively to deliver quality",
+                "We focus on software, not digital marketing or SEO services",
+                "We prefer projects where we can add meaningful value",
+                "Rushed timelines without scope flexibility aren't our strength",
               ].map((item) => (
                 <li
                   key={item}
@@ -257,7 +284,7 @@ export default function CoreServiceSection() {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
                   {item}

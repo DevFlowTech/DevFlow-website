@@ -1,4 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
+import ServicesQuickView from "@/components/sections/ServicesQuickView";
 import ProblemSolutionSection from "@/components/sections/ProblemSolutionSection";
 import CoreServiceSection from "@/components/sections/CoreServiceSection";
 import ProcessSection from "@/components/sections/ProcessSection";
@@ -12,6 +13,9 @@ export default function Home() {
     <>
       {/* Hero - Clear value proposition */}
       <HeroSection />
+
+      {/* Services Quick View - Scannable at a glance */}
+      <ServicesQuickView />
 
       {/* Problem → Solution - Speak to pain points */}
       <ProblemSolutionSection />

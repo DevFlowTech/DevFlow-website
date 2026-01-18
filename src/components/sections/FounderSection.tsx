@@ -20,14 +20,14 @@ export default function FounderSection() {
               variants={staggerItem}
               className="text-sm font-medium text-devflow-green uppercase tracking-widest mb-5 block"
             >
-              Why We Exist
+              About DevFlow
             </motion.span>
 
             <motion.h2
               variants={staggerItem}
               className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight"
             >
-              Built by Engineers. For Teams That Ship.
+              Engineering-Driven. Quality-Focused. Reliable.
             </motion.h2>
           </motion.div>
 
@@ -50,23 +50,25 @@ export default function FounderSection() {
 
               <div className="space-y-6 text-lg text-devflow-gray-300 leading-relaxed">
                 <p>
-                  DevFlow was started in 2024 by engineers who spent years
-                  building internal tools at startups — and watching the same
-                  problems repeat everywhere.
+                  DevFlow Technology was founded by engineers who have spent
+                  years building software across different industries — from
+                  enterprise applications to web platforms serving clients in
+                  India and internationally.
                 </p>
                 <p>
-                  Founders would hire agencies to build "custom software" and
-                  get bloated, unmaintainable codebases. Or they'd try to build
-                  in-house and burn 6 months on something that should take 6
-                  weeks.
+                  We've seen what works and what doesn't. Many businesses
+                  struggle with vendors who over-promise and under-deliver, or
+                  with code that becomes impossible to maintain. We started
+                  DevFlow to be the alternative.
                 </p>
                 <p>
-                  We started DevFlow to solve that. Small team. Focused scope.
-                  Fast execution. Clean code.
+                  Our approach is simple: understand your business, design the
+                  right solution, build it properly, and stand behind our work.
+                  We work selectively because quality matters more than volume.
                 </p>
                 <p className="text-white font-medium">
-                  We're not trying to be a 200-person agency. We're trying to be
-                  the team you call when you need something built right.
+                  We're not the biggest team. We're the team that delivers
+                  software you can trust.
                 </p>
               </div>
 
@@ -78,9 +80,9 @@ export default function FounderSection() {
                   </span>
                 </div>
                 <div>
-                  <p className="text-white font-medium">DevFlow Team</p>
+                  <p className="text-white font-medium">The DevFlow Team</p>
                   <p className="text-devflow-gray-500 text-sm">
-                    Founders & Engineers
+                    Engineering Excellence, Delivered
                   </p>
                 </div>
               </div>
@@ -97,18 +99,17 @@ export default function FounderSection() {
           >
             {[
               {
-                title: "Ship Fast",
+                title: "Quality First",
                 description:
-                  "Working software every two weeks. Not endless planning.",
+                  "Clean code. Thorough testing. Software that works reliably.",
               },
               {
-                title: "Communicate Clearly",
-                description:
-                  "No jargon. No disappearing. Just straight answers.",
+                title: "Clear Communication",
+                description: "Regular updates. Honest timelines. No surprises.",
               },
               {
-                title: "Own the Outcome",
-                description: "We're not done until it works. Period.",
+                title: "Long-Term Partnership",
+                description: "We build for maintainability, not just delivery.",
               },
             ].map((value) => (
               <motion.div
