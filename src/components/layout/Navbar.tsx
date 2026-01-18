@@ -34,9 +34,9 @@ export default function Navbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: easeOut }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-devflow-black/90 backdrop-blur-xl border-b border-white/[0.04]"
+            ? "bg-devflow-black/80 backdrop-blur-2xl border-b border-white/[0.06] shadow-lg shadow-black/20"
             : "bg-transparent"
         }`}
       >

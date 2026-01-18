@@ -7,6 +7,7 @@ import {
   viewportOnce,
   easeOut,
 } from "@/lib/motion";
+import BackgroundText from "@/components/ui/BackgroundText";
 
 // Clear service categories for BDE pitch
 const services = [
@@ -72,8 +73,14 @@ const techStack = [
 
 export default function CoreServiceSection() {
   return (
-    <section id="services" className="py-28 lg:py-36 bg-devflow-charcoal">
-      <div className="section-container">
+    <section
+      id="services"
+      className="py-28 lg:py-36 bg-devflow-charcoal relative overflow-hidden"
+    >
+      {/* Large Background Text */}
+      <BackgroundText text="SERVICES" />
+
+      <div className="section-container relative z-10">
         {/* Header */}
         <motion.div
           className="max-w-3xl mb-20"
@@ -91,7 +98,7 @@ export default function CoreServiceSection() {
 
           <motion.h2
             variants={staggerItem}
-            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-6"
+            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-6 text-shadow-soft"
           >
             Engineering-First Software Development
           </motion.h2>
@@ -119,14 +126,14 @@ export default function CoreServiceSection() {
             <motion.div
               key={service.title}
               variants={staggerItem}
-              className="p-8 bg-devflow-dark border border-white/[0.06] rounded-xl hover:border-devflow-green/20 transition-all duration-300"
+              className="p-8 bg-devflow-dark border border-white/[0.06] rounded-2xl hover:border-devflow-green/20 transition-all duration-500 hover-lift group"
             >
               <div className="mb-4">
                 <span className="text-xs font-medium text-devflow-green uppercase tracking-wider">
                   {service.subtitle}
                 </span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-devflow-green transition-colors duration-300">
                 {service.title}
               </h3>
               <p className="text-devflow-gray-400 mb-5 leading-relaxed">
@@ -136,7 +143,7 @@ export default function CoreServiceSection() {
                 {service.features.map((feature) => (
                   <span
                     key={feature}
-                    className="px-3 py-1 bg-white/[0.03] border border-white/[0.06] rounded-full text-xs text-devflow-gray-400"
+                    className="px-3 py-1.5 bg-white/[0.03] border border-white/[0.06] rounded-full text-xs text-devflow-gray-400 group-hover:border-devflow-green/20 group-hover:text-devflow-gray-300 transition-all duration-300"
                   >
                     {feature}
                   </span>
@@ -164,7 +171,7 @@ export default function CoreServiceSection() {
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-devflow-dark border border-white/[0.06] rounded-lg text-devflow-gray-300 font-mono text-sm"
+                className="px-4 py-2 bg-devflow-dark border border-white/[0.06] rounded-lg text-devflow-gray-300 font-mono text-sm hover:border-devflow-green/30 hover:text-devflow-green transition-all duration-300 hover-scale"
               >
                 {tech}
               </span>

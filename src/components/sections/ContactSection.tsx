@@ -8,6 +8,8 @@ import {
   viewportOnce,
   easeOut,
 } from "@/lib/motion";
+import TextScramble from "@/components/ui/TextScramble";
+import BackgroundText from "@/components/ui/BackgroundText";
 
 export default function ContactSection() {
   const [formState, setFormState] = useState({
@@ -31,8 +33,14 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-28 lg:py-36 bg-devflow-black">
-      <div className="section-container">
+    <section
+      id="contact"
+      className="py-28 lg:py-36 bg-devflow-black relative overflow-hidden"
+    >
+      {/* Large Background Text */}
+      <BackgroundText text="CONTACT" />
+
+      <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <motion.div
@@ -70,9 +78,9 @@ export default function ContactSection() {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                className="p-14 bg-devflow-charcoal border border-devflow-green/20 rounded-2xl text-center"
+                className="p-14 bg-devflow-charcoal border border-devflow-green/20 rounded-2xl text-center shadow-lg shadow-devflow-green/10"
               >
-                <div className="w-16 h-16 rounded-full bg-devflow-green/10 flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 rounded-full bg-devflow-green/10 flex items-center justify-center mx-auto mb-6 animate-breathing-glow">
                   <svg
                     className="w-8 h-8 text-devflow-green"
                     fill="none"

@@ -11,6 +11,10 @@ import {
   easeOut,
 } from "@/lib/motion";
 import MagneticButton from "@/components/ui/MagneticButton";
+import FloatingElements from "@/components/ui/FloatingElements";
+import Typewriter from "@/components/ui/Typewriter";
+import AnimatedGradientBackground from "@/components/ui/AnimatedGradientBackground";
+import InteractiveGrid from "@/components/ui/InteractiveGrid";
 
 const trustSignals = [
   { text: "Engineering-first approach" },
@@ -31,9 +35,18 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-[90vh] flex items-center justify-center bg-devflow-black pt-32 pb-20 overflow-hidden"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(186,230,84,0.1),transparent_50%)]" />
+      {/* Animated Gradient Background */}
+      <AnimatedGradientBackground />
+
+      {/* Interactive Grid */}
+      <InteractiveGrid />
+
+      {/* Background Gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(186,230,84,0.08),transparent_50%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,10,10,0)_0%,rgba(10,10,10,1)_100%)]" />
+
+      {/* Floating Animated Elements */}
+      <FloatingElements />
 
       <div className="section-container relative z-10 flex flex-col items-center text-center">
         <motion.div
@@ -45,10 +58,10 @@ export default function HeroSection() {
           {/* Badge */}
           <motion.div
             variants={staggerItem}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-devflow-green/20 bg-devflow-green/[0.05] mb-8"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-devflow-green/20 bg-devflow-green/[0.05] mb-8 backdrop-blur-sm shadow-lg shadow-devflow-green/5"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-devflow-green animate-pulse" />
-            <span className="text-sm font-medium text-devflow-green tracking-wide uppercase">
+            <span className="w-2 h-2 rounded-full bg-devflow-green animate-breathing-glow" />
+            <span className="text-sm font-medium text-devflow-green tracking-wider uppercase">
               Engineering-First IT Partner
             </span>
           </motion.div>
@@ -56,23 +69,22 @@ export default function HeroSection() {
           {/* Headline */}
           <motion.h1
             variants={staggerItem}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] tracking-tight mb-8"
+            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-10 text-shadow-soft"
           >
-            Transforming Ideas into <br className="hidden md:block" />
-            <span className="relative inline-block text-white">
-              Digital Reality
-              <svg
-                className="absolute w-full h-3 -bottom-1 left-0 text-devflow-green"
-                viewBox="0 0 200 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2.00025 6.99997C25.7501 2.99991 74.8001 -2.70008 198 3.99996"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                />
-              </svg>
+            We Build <br className="hidden md:block" />
+            <span className="text-devflow-green">
+              <Typewriter
+                words={[
+                  "Web Applications",
+                  "AI Solutions",
+                  "Mobile Apps",
+                  "Custom Software",
+                  "Cloud Systems",
+                ]}
+                typingSpeed={80}
+                deletingSpeed={40}
+                delayBetweenWords={2500}
+              />
             </span>
           </motion.h1>
 

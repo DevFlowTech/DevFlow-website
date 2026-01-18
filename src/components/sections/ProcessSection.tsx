@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { staggerContainer, viewportOnce } from "@/lib/motion";
+import {
+  staggerContainer,
+  staggerItem,
+  viewportOnce,
+  easeOut,
+} from "@/lib/motion";
+import { TracingBeam } from "@/components/ui/TracingBeam";
+import BackgroundText from "@/components/ui/BackgroundText";
 
 const steps = [
   {
@@ -44,8 +51,8 @@ export default function ProcessSection() {
       id="process"
       className="py-24 lg:py-32 bg-devflow-black relative overflow-hidden"
     >
-      {/* Background decoration */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-devflow-green/20 to-transparent" />
+      {/* Large Background Text */}
+      <BackgroundText text="PROCESS" />
 
       <div className="section-container relative z-10">
         <motion.div
@@ -67,71 +74,109 @@ export default function ProcessSection() {
           </motion.p>
         </motion.div>
 
-        <div className="relative max-w-4xl mx-auto">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`flex flex-col md:flex-row gap-8 md:gap-16 items-center mb-16 last:mb-0 group ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
-            >
-              {/* Timeline Dot (Center) */}
-              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-devflow-green bg-devflow-black z-10 group-hover:bg-devflow-green group-hover:scale-125 transition-all duration-300 shadow-[0_0_10px_rgba(186,230,84,0.3)]" />
-
-              {/* Number/Duration Side */}
-              <div
-                className={`flex-1 w-full md:w-auto text-left md:text-right ${index % 2 !== 0 ? "md:text-left" : ""}`}
+        {/* Tracing Beam Wrapper */}
+        <TracingBeam className="px-6">
+          <div className="relative max-w-2xl mx-auto pt-4 antialiased">
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-20%" }}
+                transition={{ duration: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0.3 },
+                  visible: { opacity: 1 },
+                }}
+                className="mb-12 relative group"
               >
-                <span className="text-6xl font-display font-bold text-white/[0.04] group-hover:text-white/[0.1] transition-colors duration-300">
-                  {step.number}
-                </span>
-                <p className="text-devflow-green font-mono text-sm mt-2">
-                  {step.duration}
-                </p>
-              </div>
+                {/* Step Content */}
+                <div className="flex flex-col md:flex-row gap-6 items-start">
+                  {/* Number Badge */}
+                  <motion.div
+                    variants={{
+                      hidden: {
+                        backgroundColor: "rgba(10,10,10,1)",
+                        borderColor: "rgba(186,230,84,0.1)",
+                        color: "rgba(186,230,84,0.5)",
+                        scale: 0.8,
+                      },
+                      visible: {
+                        backgroundColor: "rgba(186,230,84,1)",
+                        borderColor: "rgba(186,230,84,1)",
+                        color: "rgba(10,10,10,1)",
+                        scale: 1,
+                        transition: { duration: 0.4, type: "spring" },
+                      },
+                    }}
+                    className="flex-shrink-0 w-12 h-12 rounded-full border flex items-center justify-center font-bold text-sm relative z-10 shadow-lg"
+                  >
+                    {step.number}
+                  </motion.div>
 
-              {/* Spacer for center alignment */}
-              <div className="hidden md:block w-px h-10" />
+                  {/* Text Content */}
+                  <motion.div
+                    variants={{
+                      hidden: {
+                        borderColor: "rgba(255,255,255,0.03)",
+                        backgroundColor: "rgba(18,18,18,0.4)",
+                        x: -10,
+                      },
+                      visible: {
+                        borderColor: "rgba(186,230,84,0.15)", // Subtle green border
+                        backgroundColor: "rgba(18,18,18,1)",
+                        x: 0,
+                        transition: { duration: 0.4 },
+                      },
+                    }}
+                    className="flex-1 border p-6 rounded-xl shadow-lg relative overflow-hidden group-hover:shadow-[0_0_30px_rgba(186,230,84,0.1)] transition-shadow duration-500"
+                  >
+                    {/* Hover Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-devflow-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              {/* Content Side */}
-              <div className="flex-1 w-full pl-16 md:pl-0">
-                <div className="relative p-8 rounded-2xl bg-devflow-charcoal border border-white/[0.06] group-hover:border-devflow-green/30 transition-all duration-300 hover:shadow-glow-green-sm">
-                  {/* Connector Line (Mobile only) */}
-                  <div className="md:hidden absolute top-1/2 -translate-y-1/2 -left-12 w-12 h-px bg-devflow-green/20" />
+                    <div className="relative z-10">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
+                        <h3 className="text-xl font-semibold text-white">
+                          {step.title}
+                        </h3>
+                        <motion.span
+                          variants={{
+                            hidden: { opacity: 0.5 },
+                            visible: { opacity: 1 },
+                          }}
+                          className="text-xs font-mono text-devflow-green bg-devflow-green/5 border border-devflow-green/10 px-2 py-1 rounded"
+                        >
+                          {step.duration}
+                        </motion.span>
+                      </div>
 
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-base text-devflow-gray-400 mb-5 leading-relaxed">
-                    {step.description}
-                  </p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
-                    <svg
-                      className="w-4 h-4 text-devflow-green"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span className="text-sm text-devflow-gray-300 font-medium">
-                      {step.outcome}
-                    </span>
-                  </div>
+                      <p className="text-base text-devflow-gray-400 mb-4 leading-relaxed">
+                        {step.description}
+                      </p>
+
+                      <div className="flex items-center gap-2 pt-4 border-t border-white/[0.06] text-sm text-devflow-gray-300">
+                        <svg
+                          className="w-4 h-4 text-devflow-green flex-shrink-0"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {step.outcome}
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        </TracingBeam>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import TiltCard from "@/components/ui/TiltCard";
+import Perspective3DCard from "@/components/ui/Perspective3DCard";
 import {
   staggerContainer,
   staggerItem,
@@ -32,7 +33,7 @@ export default function CaseStudySection() {
           </motion.span>
           <motion.h2
             variants={staggerItem}
-            className="font-display text-3xl md:text-5xl font-semibold text-white leading-tight tracking-tight"
+            className="font-display text-3xl md:text-5xl font-semibold text-white leading-tight tracking-tight text-shadow-soft"
           >
             Scaling Operations for a Fast-Growing{" "}
             <span className="text-devflow-green">D2C Brand</span>

@@ -63,7 +63,7 @@ export default function RiskReversalSection() {
 
           <motion.h2
             variants={staggerItem}
-            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-6"
+            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-6 text-shadow-soft"
           >
             Not Ready for a Full Project? Start with a Pilot.
           </motion.h2>
@@ -89,14 +89,14 @@ export default function RiskReversalSection() {
             <motion.div
               key={option.title}
               variants={staggerItem}
-              className={`p-8 rounded-xl border transition-all duration-150 ${
+              className={`p-8 rounded-2xl border transition-all duration-500 hover-lift ${
                 option.highlighted
-                  ? "bg-devflow-green/[0.03] border-devflow-green/20"
+                  ? "bg-devflow-green/[0.03] border-devflow-green/20 shadow-lg shadow-devflow-green/5"
                   : "bg-devflow-charcoal border-white/[0.06] hover:border-white/10"
               }`}
             >
               {option.highlighted && (
-                <span className="inline-block px-3 py-1 bg-devflow-green/15 text-devflow-green text-xs font-medium rounded-full mb-4">
+                <span className="inline-block px-3 py-1 bg-devflow-green/15 text-devflow-green text-xs font-medium rounded-full mb-4 animate-subtle-pulse">
                   Recommended
                 </span>
               )}

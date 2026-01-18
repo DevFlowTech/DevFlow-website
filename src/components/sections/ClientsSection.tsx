@@ -39,7 +39,7 @@ export default function ClientsSection() {
     >
       {/* Background elements */}
       <div className="absolute inset-0 dot-pattern opacity-20" />
-      
+
       <div className="relative section-container">
         {/* Section header */}
         <motion.div
@@ -48,20 +48,19 @@ export default function ClientsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.span
-            className="inline-flex items-center gap-3 text-sm font-medium text-devflow-gray-400 mb-4"
-          >
+          <motion.span className="inline-flex items-center gap-3 text-sm font-medium text-devflow-gray-400 mb-4">
             <span className="w-12 h-px bg-gradient-to-r from-transparent via-devflow-green/50 to-transparent" />
             TRUSTED BY INNOVATORS
             <span className="w-12 h-px bg-gradient-to-r from-transparent via-devflow-green/50 to-transparent" />
           </motion.span>
           <h3 className="font-display text-2xl lg:text-3xl text-white">
-            Powering <span className="text-devflow-green">ambitious</span> companies
+            Powering <span className="text-devflow-green">ambitious</span>{" "}
+            companies
           </h3>
         </motion.div>
 
         {/* Infinite scroll logos */}
-        <div 
+        <div
           className="relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -112,10 +111,10 @@ export default function ClientsSection() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { value: "50+", label: "Projects Delivered" },
-            { value: "99%", label: "Client Satisfaction" },
-            { value: "< 1s", label: "Avg. Load Time" },
-            { value: "24/7", label: "Support Available" },
+            { value: 50, suffix: "+", label: "Projects Delivered" },
+            { value: 99, suffix: "%", label: "Client Satisfaction" },
+            { value: 1, prefix: "<", suffix: "s", label: "Avg. Load Time" },
+            { value: 24, suffix: "/7", label: "Support Available" },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -128,14 +127,16 @@ export default function ClientsSection() {
                 className="font-display text-4xl lg:text-5xl font-bold text-white mb-2 group-hover:text-devflow-green transition-colors duration-500"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={isInView ? { scale: 1, opacity: 1 } : {}}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: 0.5 + index * 0.1,
                   type: "spring",
                   stiffness: 200,
                 }}
               >
+                {stat.prefix || ""}
                 {stat.value}
+                {stat.suffix}
               </motion.p>
               <p className="text-sm text-devflow-gray-400 group-hover:text-devflow-gray-300 transition-colors duration-500">
                 {stat.label}

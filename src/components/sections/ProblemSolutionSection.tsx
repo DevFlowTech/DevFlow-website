@@ -10,6 +10,7 @@ import {
 } from "@/lib/motion";
 import SpotlightCard from "@/components/ui/SpotlightCard";
 import { TextReveal } from "@/components/ui/TextReveal";
+import MorphingText from "@/components/ui/MorphingText";
 
 export default function ProblemSolutionSection() {
   return (
@@ -32,7 +33,7 @@ export default function ProblemSolutionSection() {
 
           <motion.h2
             variants={staggerItem}
-            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-8"
+            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-8 text-shadow-soft"
           >
             <TextReveal>
               You Need Software That Works — Not Compromises
@@ -90,7 +91,7 @@ export default function ProblemSolutionSection() {
 
           <motion.h2
             variants={staggerItem}
-            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-8"
+            className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight mb-8 text-shadow-soft"
           >
             <TextReveal>
               A Reliable Technical Partner. Not Just Another Vendor.

@@ -1,65 +1,50 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView, motion } from "framer-motion";
+import { useInView, useMotionValue, useSpring } from "framer-motion";
 
 interface AnimatedCounterProps {
-  end: number;
-  duration?: number;
+  value: number;
   suffix?: string;
   prefix?: string;
-  decimals?: number;
+  duration?: number;
+  className?: string;
 }
 
 export default function AnimatedCounter({
-  end,
-  duration = 2,
+  value,
   suffix = "",
   prefix = "",
-  decimals = 0,
+  duration = 2,
+  className = "",
 }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 60,
+    stiffness: 100,
+  });
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const hasAnimated = useRef(false);
+  const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
-    if (isInView && !hasAnimated.current) {
-      hasAnimated.current = true;
-      const startTime = Date.now();
-      const endTime = startTime + duration * 1000;
-
-      const animate = () => {
-        const now = Date.now();
-        const progress = Math.min((now - startTime) / (duration * 1000), 1);
-
-        // Easing function for smooth animation
-        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-        const currentCount = easeOutQuart * end;
-
-        setCount(currentCount);
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          setCount(end);
-        }
-      };
-
-      requestAnimationFrame(animate);
+    if (isInView) {
+      motionValue.set(value);
     }
-  }, [isInView, end, duration]);
+  }, [isInView, value, motionValue]);
+
+  useEffect(() => {
+    const unsubscribe = springValue.on("change", (latest) => {
+      setDisplayValue(Math.round(latest));
+    });
+    return unsubscribe;
+  }, [springValue]);
 
   return (
-    <motion.span
-      ref={ref}
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.5, type: "spring" }}
-    >
+    <span ref={ref} className={className}>
       {prefix}
-      {decimals > 0 ? count.toFixed(decimals) : Math.floor(count)}
+      {displayValue}
       {suffix}
-    </motion.span>
+    </span>
   );
 }

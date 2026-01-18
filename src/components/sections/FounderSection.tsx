@@ -25,7 +25,7 @@ export default function FounderSection() {
 
             <motion.h2
               variants={staggerItem}
-              className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight"
+              className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-white leading-tight tracking-tight text-shadow-soft"
             >
               Engineering-Driven. Quality-Focused. Reliable.
             </motion.h2>
@@ -38,7 +38,7 @@ export default function FounderSection() {
             viewport={viewportOnce}
             transition={{ duration: 0.4, ease: [0.2, 0, 0, 1] }}
           >
-            <div className="p-10 md:p-12 bg-devflow-dark border border-white/[0.06] rounded-2xl">
+            <div className="p-10 md:p-12 bg-devflow-dark border border-white/[0.06] rounded-2xl shadow-layered relative overflow-hidden">
               {/* Quote Icon */}
               <svg
                 className="w-10 h-10 text-devflow-green/20 mb-8"
@@ -74,7 +74,7 @@ export default function FounderSection() {
 
               {/* Signature Area */}
               <div className="mt-10 pt-8 border-t border-white/[0.06] flex items-center gap-5">
-                <div className="w-14 h-14 rounded-full bg-devflow-green/10 border border-devflow-green/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-14 h-14 rounded-full bg-devflow-green/10 border border-devflow-green/20 flex items-center justify-center flex-shrink-0 animate-breathing-glow">
                   <span className="text-devflow-green font-semibold text-lg">
                     D
                   </span>

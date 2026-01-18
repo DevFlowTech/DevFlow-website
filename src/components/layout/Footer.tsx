@@ -21,7 +21,9 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-devflow-charcoal border-t border-white/[0.04]">
+    <footer className="bg-devflow-charcoal relative">
+      {/* Gradient top border */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-devflow-green/20 to-transparent" />
       <motion.div
         className="section-container py-16"
         initial="hidden"
