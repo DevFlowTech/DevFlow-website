@@ -130,7 +130,7 @@ export default function AIChatbot() {
       {/* Chat Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-24 right-8 z-50 w-16 h-16 rounded-full bg-gradient-to-r from-devflow-green to-emerald-400 text-devflow-black flex items-center justify-center shadow-lg cursor-pointer"
+        className="fixed bottom-8 right-8 z-50 w-16 h-16 rounded-full bg-devflow-green text-devflow-black flex items-center justify-center shadow-lg shadow-[0_0_20px_rgba(186,230,84,0.3)] cursor-pointer"
         whileHover={{
           scale: 1.1,
           boxShadow: "0 0 30px rgba(186, 230, 84, 0.5)",
@@ -184,7 +184,7 @@ export default function AIChatbot() {
       {/* Notification dot - Lime Green */}
       {!isOpen && (
         <motion.div
-          className="fixed bottom-[7.5rem] right-8 z-50 w-4 h-4 rounded-full bg-devflow-green shadow-[0_0_10px_rgba(186,230,84,0.6)]"
+          className="fixed bottom-[5.5rem] right-8 z-50 w-4 h-4 rounded-full bg-devflow-green shadow-[0_0_10px_rgba(186,230,84,0.6)]"
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 1, repeat: Infinity }}
         />
@@ -198,10 +198,10 @@ export default function AIChatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25 }}
-            className="fixed bottom-44 right-8 z-50 w-[380px] h-[500px] bg-devflow-dark border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+            className="fixed bottom-28 right-8 z-50 w-[380px] h-[500px] bg-devflow-dark border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-devflow-green/20 to-emerald-500/20 p-4 border-b border-white/10">
+            <div className="bg-gradient-to-r from-devflow-green/20 to-devflow-green/10 p-4 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-devflow-green flex items-center justify-center">
                   <span className="text-devflow-black font-bold text-lg">
@@ -213,7 +213,7 @@ export default function AIChatbot() {
                     DevFlow AI Assistant
                   </h3>
                   <p className="text-xs text-devflow-gray-400 flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-devflow-green animate-pulse" />
                     Always online
                   </p>
                 </div>

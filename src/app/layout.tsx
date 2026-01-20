@@ -8,6 +8,7 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import MouseGlow from "@/components/ui/MouseGlow";
 import StickyDotNav from "@/components/ui/StickyDotNav";
 import FloatingContact from "@/components/ui/FloatingContact";
+import AIChatbot from "@/components/ui/AIChatbot";
 
 // Base URL for the site
 const siteUrl = "https://devflow.co.in";
@@ -270,8 +271,8 @@ export default function RootLayout({
         {/* Back to Top Button */}
         <BackToTop />
 
-        {/* Floating Contact Button */}
-        <FloatingContact />
+        {/* AI Chatbot */}
+        <AIChatbot />
       </body>
     </html>
   );
