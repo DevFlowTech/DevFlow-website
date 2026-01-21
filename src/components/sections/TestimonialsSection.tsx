@@ -32,8 +32,8 @@ const testimonials = [
   {
     quote:
       "An excellent partner for our digital needs. The platform manages our diverse service offerings perfectly.",
-    author: "Vassu Team",
-    role: "Management",
+    author: "Pradip Mishra",
+    role: "Owner",
     company: "Vassu Infotech",
     rating: 5,
   },
