@@ -28,6 +28,16 @@ const organizationSchema = {
     "@type": "PostalAddress",
     addressCountry: "IN",
   },
+  brand: {
+    "@type": "Brand",
+    name: "DevFlow",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Prince Gajjar",
+    jobTitle: "Founder & Owner",
+    url: "https://devflow.co.in",
+  },
 };
 
 // Professional Service Schema

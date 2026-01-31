@@ -98,6 +98,9 @@ export const metadata: Metadata = {
     "SEO optimized websites",
     "conversion focused web design",
     "scalable web applications",
+    "Prince Gajjar",
+    "Prince Gajjar DevFlow",
+    "DevFlow Prince Gajjar",
   ],
 
   // Authorship

@@ -32,9 +32,9 @@ const testimonials = [
   {
     quote:
       "An excellent partner for our digital needs. The platform manages our diverse service offerings perfectly.",
-    author: "Pradip Mishra",
+    author: "Prince Gajjar",
     role: "Owner",
-    company: "Vassu Infotech",
+    company: "DevFlow Technology",
     rating: 5,
   },
   {

@@ -76,13 +76,13 @@ export default function FounderSection() {
               <div className="mt-10 pt-8 border-t border-white/[0.06] flex items-center gap-5">
                 <div className="w-14 h-14 rounded-full bg-devflow-green/10 border border-devflow-green/20 flex items-center justify-center flex-shrink-0 animate-breathing-glow">
                   <span className="text-devflow-green font-semibold text-lg">
-                    D
+                    P
                   </span>
                 </div>
                 <div>
-                  <p className="text-white font-medium">The DevFlow Team</p>
+                  <p className="text-white font-medium">Prince Gajjar</p>
                   <p className="text-devflow-gray-500 text-sm">
-                    Engineering Excellence, Delivered
+                    Founder & Owner, DevFlow Technology
                   </p>
                 </div>
               </div>

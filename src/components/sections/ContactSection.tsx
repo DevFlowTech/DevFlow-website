@@ -98,6 +98,10 @@ export default function ContactSection() {
                 <h3 className="text-2xl font-semibold text-white mb-3">
                   Message Received
                 </h3>
+                <p className="text-white font-semibold">Prince Gajjar</p>
+                <p className="text-devflow-gray-400 text-sm">
+                  Owner, DevFlow Technology
+                </p>
                 <p className="text-devflow-gray-400">
                   We'll get back to you within 24 hours. Talk soon.
                 </p>
@@ -124,7 +128,7 @@ export default function ContactSection() {
                         setFormState({ ...formState, name: e.target.value })
                       }
                       className="w-full px-4 py-3.5 bg-devflow-dark border border-white/[0.08] rounded-lg text-white placeholder:text-devflow-gray-600 focus:outline-none focus:border-devflow-green/40 transition-colors duration-150"
-                      placeholder="Jane Smith"
+                      placeholder="Prince Gajjar"
                     />
                   </div>
                   <div>
@@ -143,7 +147,7 @@ export default function ContactSection() {
                         setFormState({ ...formState, email: e.target.value })
                       }
                       className="w-full px-4 py-3.5 bg-devflow-dark border border-white/[0.08] rounded-lg text-white placeholder:text-devflow-gray-600 focus:outline-none focus:border-devflow-green/40 transition-colors duration-150"
-                      placeholder="jane@company.com"
+                      placeholder="devflowtechnology@gmail.com"
                     />
                   </div>
                 </div>
@@ -164,7 +168,7 @@ export default function ContactSection() {
                       setFormState({ ...formState, company: e.target.value })
                     }
                     className="w-full px-4 py-3.5 bg-devflow-dark border border-white/[0.08] rounded-lg text-white placeholder:text-devflow-gray-600 focus:outline-none focus:border-devflow-green/40 transition-colors duration-150"
-                    placeholder="Acme Inc."
+                    placeholder="DevFlow Technology"
                   />
                 </div>
 
