@@ -89,7 +89,6 @@ export default function FounderSection() {
             </div>
           </motion.div>
 
-
           {/* Bento Grid Values */}
           <motion.div
             initial="hidden"
