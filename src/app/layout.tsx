@@ -245,9 +245,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body className={`${poppins.className} antialiased`}>
-        {/* Premium Noise Overlay */}
-        <div className="noise-overlay" />
-
         {/* Scroll Progress Bar */}
         <ScrollProgress />
 
