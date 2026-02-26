@@ -45,8 +45,9 @@ export default function StickyDotNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hide on blog pages - moved after hooks to avoid "Rendered fewer hooks" error
-  if (pathname?.startsWith("/blog")) {
+  // Hide on legal and blog pages
+  const hiddenPaths = ["/blog", "/privacy", "/terms"];
+  if (hiddenPaths.some(path => pathname?.startsWith(path))) {
     return null;
   }
 

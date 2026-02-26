@@ -25,7 +25,7 @@ const stats = [
     )
   },
   {
-    value: 3,
+    value: 13,
     suffix: "+",
     label: "Happy Clients",
     icon: (
