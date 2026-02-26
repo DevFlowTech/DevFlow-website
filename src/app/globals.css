@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Aggressively hide system cursor site-wide */
+html,
+body,
+* {
+  cursor: none !important;
+}
+
+
 :root {
   /* Mapping everything to Poppins as requested */
   --font-inter: var(--font-poppins), system-ui, sans-serif;
@@ -130,12 +138,10 @@ h6 {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
   transition: left 0.5s ease;
   pointer-events: none;
 }
@@ -180,11 +186,9 @@ h6 {
 /* Glass card effect */
 .glass-card {
   position: relative;
-  background: linear-gradient(
-    145deg,
-    rgba(30, 30, 30, 0.8),
-    rgba(20, 20, 20, 0.6)
-  );
+  background: linear-gradient(145deg,
+      rgba(30, 30, 30, 0.8),
+      rgba(20, 20, 20, 0.6));
   backdrop-filter: blur(32px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1.25rem;
@@ -197,11 +201,9 @@ h6 {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    transparent 50%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1),
+      transparent 50%);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -220,11 +222,9 @@ h6 {
 }
 
 .glass-card:hover {
-  background: linear-gradient(
-    145deg,
-    rgba(35, 35, 35, 0.9),
-    rgba(25, 25, 25, 0.7)
-  );
+  background: linear-gradient(145deg,
+      rgba(35, 35, 35, 0.9),
+      rgba(25, 25, 25, 0.7));
   border-color: rgba(186, 230, 84, 0.15);
   box-shadow:
     0 8px 48px -12px rgba(0, 0, 0, 0.6),
@@ -246,18 +246,17 @@ h6 {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
 }
 
 .shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.05),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
@@ -288,10 +287,8 @@ h6 {
 
 /* Dot pattern */
 .dot-pattern {
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -309,11 +306,13 @@ h6 {
 }
 
 @keyframes pulseGlow {
+
   0%,
   100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.6;
     transform: scale(1.1);
@@ -417,9 +416,11 @@ h6 {
   .text-display-xl {
     font-size: 3.5rem;
   }
+
   .text-display-lg {
     font-size: 3rem;
   }
+
   .text-display-md {
     font-size: 2.25rem;
   }
@@ -429,36 +430,47 @@ h6 {
 .bg-devflow-black {
   background-color: var(--devflow-black);
 }
+
 .bg-devflow-charcoal {
   background-color: var(--devflow-charcoal);
 }
+
 .bg-devflow-dark {
   background-color: var(--devflow-dark);
 }
+
 .bg-devflow-green {
   background-color: var(--devflow-green);
 }
+
 .text-devflow-black {
   color: var(--devflow-black);
 }
+
 .text-devflow-green {
   color: var(--devflow-green);
 }
+
 .text-devflow-gray-100 {
   color: var(--devflow-gray-100);
 }
+
 .text-devflow-gray-200 {
   color: var(--devflow-gray-200);
 }
+
 .text-devflow-gray-300 {
   color: var(--devflow-gray-300);
 }
+
 .text-devflow-gray-400 {
   color: var(--devflow-gray-400);
 }
+
 .text-devflow-gray-500 {
   color: var(--devflow-gray-500);
 }
+
 .border-devflow-green {
   border-color: var(--devflow-green);
 }
@@ -467,6 +479,7 @@ h6 {
 .font-display {
   font-family: var(--font-outfit);
 }
+
 .font-mono {
   font-family: var(--font-jetbrains);
 }
@@ -475,13 +488,13 @@ h6 {
    PREMIUM ANIMATIONS & EFFECTS
    ======================================== */
 
-/* Force default cursor - override any hidden cursor styles */
+/* Hide default cursor globally for pure custom cursor experience */
 * {
-  cursor: auto !important;
+  cursor: none !important;
 }
 
 body {
-  cursor: auto !important;
+  cursor: none !important;
 }
 
 a,
@@ -490,13 +503,13 @@ button,
 input,
 textarea,
 select {
-  cursor: pointer !important;
+  cursor: none !important;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-  cursor: text !important;
+  cursor: none !important;
 }
 
 /* Smooth page transitions */
@@ -506,13 +519,16 @@ html.is-animating {
 
 /* Float animation */
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
   }
+
   25% {
     transform: translateY(-10px) rotate(1deg);
   }
+
   75% {
     transform: translateY(5px) rotate(-1deg);
   }
@@ -520,20 +536,24 @@ html.is-animating {
 
 /* Slow float animation for gradient backgrounds */
 @keyframes float-slow {
+
   0%,
   100% {
     transform: translate(0, 0) scale(1);
   }
+
   50% {
     transform: translate(50px, 50px) scale(1.1);
   }
 }
 
 @keyframes float-reverse {
+
   0%,
   100% {
     transform: translate(0, 0) scale(1);
   }
+
   50% {
     transform: translate(-50px, -50px) scale(0.95);
   }
@@ -553,20 +573,24 @@ html.is-animating {
 
 /* Gentle float for code symbols */
 @keyframes float-gentle {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-15px);
   }
 }
 
 @keyframes float-gentle-reverse {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(12px);
   }
@@ -586,10 +610,12 @@ html.is-animating {
 }
 
 @keyframes pulse-slow {
+
   0%,
   100% {
     opacity: 0.5;
   }
+
   50% {
     opacity: 0.8;
   }
@@ -597,11 +623,13 @@ html.is-animating {
 
 /* Subtle pulse animation */
 @keyframes subtlePulse {
+
   0%,
   100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.8;
     transform: scale(1.02);
@@ -614,10 +642,12 @@ html.is-animating {
 
 /* Glow pulse animation */
 @keyframes glowPulse {
+
   0%,
   100% {
     box-shadow: 0 0 20px rgba(186, 230, 84, 0.3);
   }
+
   50% {
     box-shadow:
       0 0 40px rgba(186, 230, 84, 0.5),
@@ -634,31 +664,33 @@ html.is-animating {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
 .animate-border-flow {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(186, 230, 84, 0.5),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(186, 230, 84, 0.5),
+      transparent);
   background-size: 200% 100%;
   animation: borderFlow 3s linear infinite;
 }
 
 /* Gradient shift animation */
 @keyframes gradientShift {
+
   0%,
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -674,6 +706,7 @@ html.is-animating {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -689,6 +722,7 @@ html.is-animating {
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -705,6 +739,7 @@ html.is-animating {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -720,6 +755,7 @@ html.is-animating {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -780,6 +816,7 @@ html.is-animating {
   from {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
+
   to {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
@@ -793,15 +830,19 @@ html.is-animating {
 .stagger-1 {
   animation-delay: 0.1s;
 }
+
 .stagger-2 {
   animation-delay: 0.2s;
 }
+
 .stagger-3 {
   animation-delay: 0.3s;
 }
+
 .stagger-4 {
   animation-delay: 0.4s;
 }
+
 .stagger-5 {
   animation-delay: 0.5s;
 }
@@ -811,6 +852,7 @@ html.is-animating {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -826,15 +868,18 @@ html.is-animating {
 
 /* Blob animation for background elements */
 @keyframes blob {
+
   0%,
   100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     transform: translate(0, 0) rotate(0deg);
   }
+
   33% {
     border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
     transform: translate(10px, -10px) rotate(120deg);
   }
+
   66% {
     border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
     transform: translate(-10px, 10px) rotate(240deg);
@@ -851,6 +896,7 @@ html.is-animating {
 
 /* Hide cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
+
   .custom-cursor,
   [data-cursor] {
     display: none !important;
@@ -893,10 +939,12 @@ html.is-animating {
 
 /* Gradient text animation */
 @keyframes gradient-shift {
+
   0%,
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -928,10 +976,12 @@ html.is-animating {
     transform: translate(0, 0) scale(1);
     opacity: 0.4;
   }
+
   50% {
     transform: translate(2%, 1%) scale(1.02);
     opacity: 0.5;
   }
+
   100% {
     transform: translate(-1%, 2%) scale(1);
     opacity: 0.4;
@@ -966,23 +1016,19 @@ p {
 /* Elegant Section Dividers */
 .section-divider {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(186, 230, 84, 0.2),
-    rgba(255, 255, 255, 0.1),
-    rgba(186, 230, 84, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(186, 230, 84, 0.2),
+      rgba(255, 255, 255, 0.1),
+      rgba(186, 230, 84, 0.2),
+      transparent);
 }
 
 /* Premium Card Styling */
 .premium-card {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.03) 0%,
-    rgba(255, 255, 255, 0.01) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0.01) 100%);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 1.5rem;
   backdrop-filter: blur(20px);
@@ -1121,11 +1167,9 @@ select:focus {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: linear-gradient(
-    135deg,
-    rgba(186, 230, 84, 0.1),
-    rgba(186, 230, 84, 0.05)
-  );
+  background: linear-gradient(135deg,
+      rgba(186, 230, 84, 0.1),
+      rgba(186, 230, 84, 0.05));
   border: 1px solid rgba(186, 230, 84, 0.2);
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -1137,10 +1181,12 @@ select:focus {
 
 /* Subtle Pulse Animation */
 @keyframes subtle-pulse {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.7;
   }
@@ -1152,10 +1198,12 @@ select:focus {
 
 /* Breathing Glow Animation */
 @keyframes breathing-glow {
+
   0%,
   100% {
     box-shadow: 0 0 20px rgba(186, 230, 84, 0.2);
   }
+
   50% {
     box-shadow: 0 0 30px rgba(186, 230, 84, 0.35);
   }
@@ -1166,24 +1214,28 @@ select:focus {
 }
 
 /* Staggered Fade In */
-.stagger-fade > * {
+.stagger-fade>* {
   opacity: 0;
   animation: stagger-fade-in 0.5s ease forwards;
 }
 
-.stagger-fade > *:nth-child(1) {
+.stagger-fade>*:nth-child(1) {
   animation-delay: 0.1s;
 }
-.stagger-fade > *:nth-child(2) {
+
+.stagger-fade>*:nth-child(2) {
   animation-delay: 0.2s;
 }
-.stagger-fade > *:nth-child(3) {
+
+.stagger-fade>*:nth-child(3) {
   animation-delay: 0.3s;
 }
-.stagger-fade > *:nth-child(4) {
+
+.stagger-fade>*:nth-child(4) {
   animation-delay: 0.4s;
 }
-.stagger-fade > *:nth-child(5) {
+
+.stagger-fade>*:nth-child(5) {
   animation-delay: 0.5s;
 }
 
@@ -1192,6 +1244,7 @@ select:focus {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1222,12 +1275,10 @@ blockquote::before {
 hr {
   border: none;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
   margin: 3rem 0;
 }
 
@@ -1304,10 +1355,8 @@ ul.premium-list li::before {
   z-index: -1;
   margin: -1px;
   border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(186, 230, 84, 0.3),
-    transparent,
-    rgba(186, 230, 84, 0.1)
-  );
+  background: linear-gradient(135deg,
+      rgba(186, 230, 84, 0.3),
+      transparent,
+      rgba(186, 230, 84, 0.1));
 }

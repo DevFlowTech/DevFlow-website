@@ -3,10 +3,11 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import PageWrapper from "@/components/layout/PageWrapper";
 import StructuredData from "@/components/SEO/StructuredData";
 import BackToTop from "@/components/ui/BackToTop";
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import MouseGlow from "@/components/ui/MouseGlow";
+import PremiumCursor from "@/components/ui/PremiumCursor";
 import StickyDotNav from "@/components/ui/StickyDotNav";
 import FloatingContact from "@/components/ui/FloatingContact";
 import CookieBanner from "@/components/ui/CookieBanner";
@@ -244,11 +245,14 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body className={`${poppins.className} antialiased`}>
+        {/* Premium Noise Overlay */}
+        <div className="noise-overlay" />
+
         {/* Scroll Progress Bar */}
         <ScrollProgress />
 
-        {/* Mouse Glow Effect */}
-        <MouseGlow />
+        {/* Premium Custom Cursor */}
+        <PremiumCursor />
 
         {/* Sticky Section Navigation */}
         <StickyDotNav />
@@ -268,9 +272,9 @@ export default function RootLayout({
         <Navbar />
 
         {/* Main content */}
-        <main id="main-content" role="main">
+        <PageWrapper>
           {children}
-        </main>
+        </PageWrapper>
 
         {/* Footer */}
         <Footer />

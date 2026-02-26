@@ -1,19 +1,23 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/sections/HeroSection";
-import ServicesQuickView from "@/components/sections/ServicesQuickView";
-import ProblemSolutionSection from "@/components/sections/ProblemSolutionSection";
-import CoreServiceSection from "@/components/sections/CoreServiceSection";
-import ProcessSection from "@/components/sections/ProcessSection";
-import CaseStudySection from "@/components/sections/CaseStudySection";
-import RiskReversalSection from "@/components/sections/RiskReversalSection";
-import FounderSection from "@/components/sections/FounderSection";
-import ContactSection from "@/components/sections/ContactSection";
-import TechStackSection from "@/components/sections/TechStackSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import ProjectShowcase from "@/components/sections/ProjectShowcase";
 import StatsBar from "@/components/sections/StatsBar";
-import FAQSection from "@/components/sections/FAQSection";
-import ParallaxText from "@/components/ui/ParallaxText";
+import TechStackSection from "@/components/sections/TechStackSection";
 import { CurveDivider } from "@/components/ui/WaveDivider";
+
+// Dynamic imports for sections below the fold to optimize performance
+const ServicesQuickView = dynamic(() => import("@/components/sections/ServicesQuickView"), { ssr: false });
+const ProblemSolutionSection = dynamic(() => import("@/components/sections/ProblemSolutionSection"), { ssr: false });
+const CoreServiceSection = dynamic(() => import("@/components/sections/CoreServiceSection"), { ssr: false });
+const ProcessSection = dynamic(() => import("@/components/sections/ProcessSection"), { ssr: false });
+const ProjectShowcase = dynamic(() => import("@/components/sections/ProjectShowcase"), { ssr: false });
+const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"), { ssr: false });
+const CaseStudySection = dynamic(() => import("@/components/sections/CaseStudySection"), { ssr: false });
+const FounderSection = dynamic(() => import("@/components/sections/FounderSection"), { ssr: false });
+const FAQSection = dynamic(() => import("@/components/sections/FAQSection"), { ssr: false });
+const ContactSection = dynamic(() => import("@/components/sections/ContactSection"), { ssr: false });
+const ParallaxText = dynamic(() => import("@/components/ui/ParallaxText"), { ssr: false });
 
 // Elegant section divider component
 const SectionDivider = () => (

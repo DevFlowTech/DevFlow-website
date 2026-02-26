@@ -10,6 +10,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { easeOut } from "@/lib/motion";
+import Magnetic from "@/components/ui/Magnetic";
 
 const navItems = [
   { label: "Home", href: "/#hero" },
@@ -36,17 +37,15 @@ export default function Navbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: easeOut }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-devflow-black/80 backdrop-blur-2xl border-b border-white/[0.06] shadow-lg shadow-black/20"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+          ? "bg-devflow-black/70 backdrop-blur-xl border-b border-white/[0.05] shadow-[0_4px_30px_rgba(0,0,0,0.1)] after:content-[''] after:absolute after:inset-0 after:shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] after:pointer-events-none"
+          : "bg-transparent"
+          }`}
       >
         <nav className="section-container">
           <div
-            className={`flex items-center justify-between transition-all duration-300 ${
-              isScrolled ? "h-16" : "h-20"
-            }`}
+            className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? "h-16" : "h-20"
+              }`}
           >
             {/* Logo */}
             <Link href="/" className="flex items-center">
@@ -90,12 +89,14 @@ export default function Navbar() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.3 }}
               >
-                <Link
-                  href="/#contact"
-                  className="px-5 py-2.5 bg-devflow-green text-devflow-black font-semibold text-sm rounded-lg transition-all duration-150 hover:bg-devflow-green/90"
-                >
-                  Let's Talk
-                </Link>
+                <Magnetic>
+                  <Link
+                    href="/#contact"
+                    className="px-5 py-2.5 bg-devflow-green text-devflow-black font-semibold text-sm rounded-lg transition-all duration-150 hover:bg-devflow-green/90 shadow-[0_0_15px_rgba(186,230,84,0.1)]"
+                  >
+                    Let's Talk
+                  </Link>
+                </Magnetic>
               </motion.div>
             </div>
 
