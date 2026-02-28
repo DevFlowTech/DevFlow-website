@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
                             </svg>
                             Return to Core System
                         </Link>
-                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">Privacy <span className="text-devflow-green">Protocol</span></h1>
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Privacy <span className="text-devflow-green">Protocol</span></h1>
                         <p className="text-devflow-gray-400 text-lg max-w-2xl leading-relaxed">
                             At DevFlow Technology, engineering integrity extends to how we handle your data. This protocol outlines our rigorous standards for data collection, processing, and security.
                         </p>
@@ -102,7 +102,7 @@ export default function PrivacyPolicy() {
                         <section className="relative">
                             <div className="absolute -left-8 top-1 w-px h-6 bg-devflow-green/60 hidden md:block" />
                             <h2 className="text-xl md:text-2xl font-bold text-white mb-6 tracking-tighter">03. Autonomous Threat Mitigation & AI Daemons</h2>
-                            <div className="p-8 md:p-12 rounded-[2.5rem] bg-[#0c0c0c] border border-devflow-green/15 relative overflow-hidden group">
+                            <div className="p-6 md:p-12 rounded-[2rem] md:rounded-[2.5rem] bg-[#0c0c0c] border border-devflow-green/15 relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-gradient-to-br from-devflow-green/5 via-transparent to-transparent opacity-50" />
                                 <div className="relative z-10">
                                     <div className="flex items-center gap-4 mb-8">
@@ -135,7 +135,7 @@ export default function PrivacyPolicy() {
                         <section className="relative">
                             <div className="absolute -left-8 top-1 w-px h-6 bg-devflow-green/60 hidden md:block" />
                             <h2 className="text-xl md:text-2xl font-bold text-white mb-6 tracking-tighter capitalize font-mono">04. Quantum-Resistant Ledger Logics</h2>
-                            <div className="bg-[#080808] border border-white/[0.05] rounded-3xl p-8 font-mono text-[11px] leading-relaxed text-devflow-gray-500 overflow-hidden relative group">
+                            <div className="bg-[#080808] border border-white/[0.05] rounded-3xl p-6 md:p-8 font-mono text-[11px] leading-relaxed text-devflow-gray-500 overflow-hidden relative group">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-devflow-green to-transparent opacity-20 group-hover:opacity-100 transition-opacity" />
                                 <div className="space-y-1">
                                     <div>[INIT] LOADING_PRIVACY_KERNEL_v4.5.EXTREME...</div>

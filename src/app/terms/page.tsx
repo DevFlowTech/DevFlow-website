@@ -25,7 +25,7 @@ export default function TermsOfService() {
                             </svg>
                             Return to Core System
                         </Link>
-                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">Terms of <span className="text-devflow-green">Engagement</span></h1>
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Terms of <span className="text-devflow-green">Engagement</span></h1>
                         <p className="text-devflow-gray-400 text-lg max-w-2xl leading-relaxed">
                             These terms define the legal parameters and operational frameworks for utilizing DevFlow Technology's engineering platforms and professional services.
                         </p>
@@ -53,15 +53,30 @@ export default function TermsOfService() {
                                 <p className="leading-relaxed">
                                     Utilization of any digital asset, neural architectural pattern, or source-level component within the <strong>DevFlow Technology</strong> ecosystem constitutes an immediate, irrevocable acknowledgment of our full <strong>Sovereign Ownership</strong>.
                                 </p>
-                                <div className="p-8 rounded-[2rem] bg-[#0a0a0a] border border-devflow-green/30 relative overflow-hidden group">
+                                <div className="p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] bg-[#0a0a0a] border border-devflow-green/30 relative overflow-hidden group">
                                     <div className="absolute inset-0 bg-devflow-green/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                                     <p className="text-xs font-mono text-devflow-green uppercase leading-loose tracking-[0.2em] mb-4">
                                         [CORE_INTELLECTUAL_DIRECTIVE]:
                                     </p>
-                                    <ul className="text-sm text-devflow-gray-400 space-y-3 list-none font-medium">
-                                        <li className="flex gap-3 items-start"><span className="text-devflow-green font-bold">»</span> <strong>Absolute IP Sovereignty:</strong> Any attempt to replicate or scrape our proprietary logic results in immediate <strong>Total IP Erasure</strong> of the offending node via automated legal-tech daemons.</li>
-                                        <li className="flex gap-3 items-start"><span className="text-devflow-green font-bold">»</span> <strong>Non-Negotiable Consent:</strong> Continuous interaction equals <strong>Irrevocable Systemic Consent</strong> to all present and future architectural mandates.</li>
-                                        <li className="flex gap-3 items-start"><span className="text-devflow-green font-bold">»</span> <strong>Operational Immunity:</strong> DevFlow Technology maintains absolute immunity from any claims arising from experimental UI modules or kernel-level desyncs.</li>
+                                    <ul className="text-sm text-devflow-gray-400 space-y-4 list-none font-medium">
+                                        <li className="flex gap-3 items-start">
+                                            <span className="text-devflow-green font-bold shrink-0">»</span>
+                                            <div>
+                                                <strong className="text-white">Absolute IP Sovereignty:</strong> Any attempt to replicate or scrape our proprietary logic results in immediate <strong>Total IP Erasure</strong> of the offending node via automated legal-tech daemons.
+                                            </div>
+                                        </li>
+                                        <li className="flex gap-3 items-start">
+                                            <span className="text-devflow-green font-bold shrink-0">»</span>
+                                            <div>
+                                                <strong className="text-white">Non-Negotiable Consent:</strong> Continuous interaction equals <strong>Irrevocable Systemic Consent</strong> to all present and future architectural mandates.
+                                            </div>
+                                        </li>
+                                        <li className="flex gap-3 items-start">
+                                            <span className="text-devflow-green font-bold shrink-0">»</span>
+                                            <div>
+                                                <strong className="text-white">Operational Immunity:</strong> DevFlow Technology maintains absolute immunity from any claims arising from experimental UI modules or kernel-level desyncs.
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
